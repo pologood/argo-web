@@ -1,0 +1,15 @@
+id: sample01
+domain: http://localhost:8080
+assets: http://dev.sweetclass.com
+title: Sample
+name: sample
+login: /account/signin
+denied: /account/denied
+logout: /account/signout
+anonymous: true
+attachmentview: X-Accel-Redirect
+
+
+ext:
+  k1: a
+  k2: b
