@@ -2,6 +2,7 @@ package com.argo.web;
 
 import com.argo.security.CookieCipher;
 import com.argo.security.SessionCookieHolder;
+import com.argo.security.UserIdentity;
 import com.argo.security.exception.CookieExpiredException;
 import com.argo.security.exception.CookieInvalidException;
 import com.argo.security.exception.PermissionDeniedException;
@@ -48,7 +49,7 @@ public abstract class MvcController {
      * @throws com.argo.security.exception.UnauthorizedException
      */
     @ModelAttribute
-    public <T> T getCurrentUser() throws UnauthorizedException {
+    public <T extends UserIdentity> T getCurrentUser() throws UnauthorizedException {
         RequestAttributes ra = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) ra).getRequest();
 //        if (logger.isDebugEnabled()) {

@@ -16,8 +16,9 @@ public class JsonResponse<T> extends MvcResponse {
         this.data = Lists.newArrayList();
     }
 
-    public void add(T o){
-       this.data.add(o);
+    public JsonResponse add(T o) {
+        this.data.add(o);
+        return this;
     }
 
     public List<T> getData() {

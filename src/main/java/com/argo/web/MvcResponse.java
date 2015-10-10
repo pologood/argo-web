@@ -17,23 +17,26 @@ public abstract class MvcResponse implements Serializable {
         return msg;
     }
 
-    public void setMsg(String msg) {
+    public MvcResponse setMsg(String msg) {
         this.msg = msg;
+        return this;
     }
 
     public Integer getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public MvcResponse setCode(Integer code) {
         this.code = code;
+        return this;
     }
 
     public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public MvcResponse setTotal(Integer total) {
         this.total = total;
+        return this;
     }
 }
