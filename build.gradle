@@ -29,7 +29,7 @@ description = 'web collections for common cases'
 
 dependencies {
     compile 'com.github.yamingd.argo:argo-yaml:1.0'
-    compile 'com.github.yamingd.argo:argo-security:2.0'
+    compile 'com.github.yamingd.argo:argo-security:2.1'
     compile 'com.github.yamingd.argo:argo-util:2.0'
     compile 'com.github.yamingd.argo:argo-freemarker:2.0'
     compile 'org.apache.commons:commons-lang3:3.1'
