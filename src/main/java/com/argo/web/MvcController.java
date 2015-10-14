@@ -78,7 +78,7 @@ public abstract class MvcController {
             logger.debug("UserNotAuthorizationException currentUid="+currentUid);
         }
         if (null != authorizationService && StringUtils.isNotBlank(currentUid)){
-            T baseUser = (T) this.authorizationService.verifyCookie(request, response, currentUid);
+            T baseUser = (T) this.authorizationService.verifyCookie(currentUid);
             return baseUser;
         }
         return null;
