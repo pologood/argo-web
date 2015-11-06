@@ -9,8 +9,8 @@ import java.util.Map;
 /**
  * 存放Web端来环境变量
  *
- * @author yaming_deng
- * @date 2013-1-16
+ * yaming_deng
+ * 2013-1-16
  */
 public class WebContext implements Serializable {
 	

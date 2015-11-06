@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
+ * MVC Controller
  * User: yamingdeng
  * Date: 13-12-15
  * Time: 下午8:12
@@ -44,9 +44,8 @@ public abstract class MvcController {
 
     /**
      * 获取当前用户
-     * @param <T>
-     * @return
-     * @throws com.argo.security.exception.UnauthorizedException
+     * @return T 目标用户实例
+     * @throws com.argo.security.exception.UnauthorizedException 用户验证不通过异常
      */
     @ModelAttribute
     public <T extends UserIdentity> T getCurrentUser() throws UnauthorizedException {
@@ -64,10 +63,12 @@ public abstract class MvcController {
 
     /**
      * 检验Cookie
-     * @param request
-     * @param response
-     * @return
-     * @throws UnauthorizedException, CookieInvalidException, CookieExpiredException
+     * @param request 请求对象
+     * @param response 请求响应对象
+     * @return T 目标用户实例
+     * @throws UnauthorizedException 用户验证不通过异常
+     * @throws CookieInvalidException Cookie数据不正确异常
+     * @throws CookieExpiredException Cookie过期异常
      */
     public <T> T verifyCookie(HttpServletRequest request, HttpServletResponse response)
             throws UnauthorizedException, CookieInvalidException, CookieExpiredException {
@@ -86,8 +87,8 @@ public abstract class MvcController {
 
     /**
      * 检查授权访问
-     * @param url
-     * @throws PermissionDeniedException
+     * @param url 访问URL
+     * @throws PermissionDeniedException 拒接访问异常
      */
     public void verifyAccess(String url) throws PermissionDeniedException {
         if (!this.needLogin()){
@@ -105,8 +106,8 @@ public abstract class MvcController {
     /**
      * 获取用户ip地址（在apache代理后需要从头文件中获取ip）
      *
-     * @param request
-     * @return
+     * @param request 请求
+     * @return String IP地址
      */
     public static String getIP(HttpServletRequest request) {
         String ip = request.getHeader("x-forwarded-for");
@@ -135,9 +136,9 @@ public abstract class MvcController {
 
     /**
      * 记住当前用户
-     * @param request
-     * @param response
-     * @param userId
+     * @param request 请求对象
+     * @param response 请求响应
+     * @param userId 用户标示
      */
     public void rememberUser(HttpServletRequest request, HttpServletResponse response, Object userId) {
         String value = String.valueOf(userId);
@@ -162,8 +163,8 @@ public abstract class MvcController {
 
     /**
      * 注销当前用户
-     * @param request
-     * @param response
+     * @param request 请求对象
+     * @param response 请求响应对象
      */
     public void clearUser(HttpServletRequest request, HttpServletResponse response) {
         SessionCookieHolder.removeCurrentUID(response);

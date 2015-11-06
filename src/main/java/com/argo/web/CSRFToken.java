@@ -39,7 +39,7 @@ public class CSRFToken {
     private String _csrfHtml  = "<input type='hidden' name='_csrf_' value='%s' />";
     /**
      * 同时新开2个Form页面，旧页面的token会失效.
-     * @return
+     * @return String HTML
      */
     private String getCsrfHtml(){
         String ct = String.format(this._csrfHtml, this.getToken());
@@ -48,7 +48,7 @@ public class CSRFToken {
 
     /**
      *
-     * @return
+     * @return String 随机字符串
      */
     public String getToken(){
         if(StringUtils.isBlank(token)){
