@@ -1,11 +1,18 @@
 package com.argo.web;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 
 public abstract class MvcResponse implements Serializable {
 
+    @Expose
     protected String msg;
+
+    @Expose
     protected Integer code;
+
+    @Expose
     protected Integer total;
 
     public MvcResponse() {
