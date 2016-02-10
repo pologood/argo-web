@@ -14,7 +14,7 @@ import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -33,13 +33,12 @@ import java.util.List;
  * Date: 13-12-15
  * Time: 下午8:12
  */
-public abstract class MvcController {
+public abstract class MvcController implements InitializingBean {
 
     public static final String DEFAULT_MENU = "default";
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
     protected ExceptionGlobalResolver exceptionGlobalResolver = new ExceptionGlobalResolver();
 
-    @Autowired(required=false)
     private AuthorizationService authorizationService;
 
     /**
@@ -74,7 +73,7 @@ public abstract class MvcController {
             throws UnauthorizedException, CookieInvalidException, CookieExpiredException {
         String currentUid = null;
         try {
-            currentUid = SessionCookieHolder.getCurrentUID(request);
+            currentUid = SessionCookieHolder.getCurrentUID(request, getAuthCookieId());
         } catch (UnauthorizedException e) {
             logger.debug("UserNotAuthorizationException currentUid="+currentUid);
         }
@@ -142,7 +141,7 @@ public abstract class MvcController {
      */
     public void rememberUser(HttpServletRequest request, HttpServletResponse response, Object userId) {
         String value = String.valueOf(userId);
-        String name = SessionCookieHolder.getAuthCookieId();
+        String name = getAuthCookieId();
         try {
             value = CookieCipher.encrypt(name, value);
             SessionCookieHolder.setCookie(response, name, value);
@@ -151,6 +150,13 @@ public abstract class MvcController {
         }
     }
 
+    /**
+     * 记住当前的用户
+     * @param request
+     * @param response
+     * @param name
+     * @param userId
+     */
     public void rememberUser(HttpServletRequest request, HttpServletResponse response, String name, Object userId) {
         String value = String.valueOf(userId);
         try {
@@ -167,7 +173,7 @@ public abstract class MvcController {
      * @param response 请求响应对象
      */
     public void clearUser(HttpServletRequest request, HttpServletResponse response) {
-        SessionCookieHolder.removeCurrentUID(response);
+        SessionCookieHolder.removeCurrentUID(response, getAuthCookieId());
         request.removeAttribute("currentUser");
     }
 
@@ -192,5 +198,30 @@ public abstract class MvcController {
         }
         logger.error("Form Error: {}", result);
         actResponse.getBuilder().setCode(6001);
+    }
+
+    /**
+     * 在子类实现
+     * @return AuthorizationService
+     */
+    public AuthorizationService getAuthorizationService(){
+        return null;
+    }
+
+    /**
+     * 会话CookieID
+     * @return String
+     */
+    public String getAuthCookieId(){
+        return SessionCookieHolder.getAuthCookieId();
+    }
+
+    public void setAuthorizationService(AuthorizationService authorizationService) {
+        this.authorizationService = authorizationService;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        this.setAuthorizationService(this.getAuthorizationService());
     }
 }
