@@ -64,9 +64,9 @@ public class GsonHttpMessageConverter extends AbstractHttpMessageConverter<Objec
 
         String json = gson.toJson(t);
         if (logger.isDebugEnabled()){
-            logger.debug("writeInternal:");
+            logger.debug("writeInternal: {}", json);
         }
-        outputMessage.getBody().write(json.getBytes());
+        outputMessage.getBody().write(json.getBytes(DEFAULT_CHARSET));
     }
 
     //TODO: move this to a more appropriated utils class
