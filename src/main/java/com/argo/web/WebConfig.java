@@ -37,6 +37,10 @@ public class WebConfig {
     private String logout;
     private Boolean anonymous;
     private String attachmentview;
+    /**
+     * 静态文件访问域名
+     */
+    private String cdn;
 
     private Map ext;
 
@@ -131,6 +135,14 @@ public class WebConfig {
         if (null != ext){
             extra = new YamlMap(ext);
         }
+    }
+
+    public String getCdn() {
+        return cdn;
+    }
+
+    public void setCdn(String cdn) {
+        this.cdn = cdn;
     }
 
     public YamlMap getExtra() {
