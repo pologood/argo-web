@@ -55,16 +55,19 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
     private void handleMobileRequest(HttpServletRequest request, HttpServletResponse response, Exception ex){
         ProtobufResponse pb = new ProtobufResponse();
         if (ex instanceof UnauthorizedException){
+            logger.error(ex.getMessage(), ex);
             UnauthorizedException exception = (UnauthorizedException)ex;
             pb.getBuilder().setCode(exception.getStatusCode()).setMsg("UserNotAuthorizationException");
             response.setStatus(exception.getStatusCode());
             writeProtobuf(request, response, pb.build());
         }else if (ex instanceof PermissionDeniedException){
+            logger.error(ex.getMessage(), ex);
             PermissionDeniedException exception = (PermissionDeniedException)ex;
             pb.getBuilder().setCode(exception.getStatusCode()).setMsg("PermissionDeniedException");
             response.setStatus(exception.getStatusCode());
             writeProtobuf(request, response, pb.build());
         }else if (ex instanceof UserKickedOffException){
+            logger.error(ex.getMessage(), ex);
             UserKickedOffException exception = (UserKickedOffException)ex;
             pb.getBuilder().setCode(exception.getStatusCode()).setMsg("UserKickedOffException");
             response.setStatus(200);

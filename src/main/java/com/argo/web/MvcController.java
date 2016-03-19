@@ -18,7 +18,6 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -46,7 +45,6 @@ public abstract class MvcController implements InitializingBean {
      * @return T 目标用户实例
      * @throws com.argo.security.exception.UnauthorizedException 用户验证不通过异常
      */
-    @ModelAttribute
     public <T extends UserIdentity> T getCurrentUser() throws UnauthorizedException {
         RequestAttributes ra = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) ra).getRequest();

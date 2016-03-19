@@ -43,7 +43,7 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
         }
 
         long ts = System.currentTimeMillis() - WebContext.getContext().getStartAt();
-        logger.info("handle {}. duration={}ms", request.getRequestURI(), ts);
+        logger.info("handle {}. method={}. duration={}ms", request.getRequestURI(), request.getMethod(), ts);
     }
 
     @Override
@@ -52,6 +52,9 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
             HttpServletResponse response,
             Object handler) throws Exception {
 
+        if (logger.isDebugEnabled()) {
+            logger.debug("x-app: {}", request.getHeader(X_MOBILE), request.getMethod());
+        }
         boolean isMobile = request.getHeader(X_MOBILE) != null;
 
         String url = request.getRequestURI();
@@ -64,6 +67,9 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
         WebContext.getContext().setRootPath(request.getContextPath());
 
         MvcController c = this.getController(handler);
+        if (null == c){
+            return false;
+        }
         Object user = null;
         // 若是远程服务，则需要配置bean.authorizationService的实现
         // 若是本地服务，不需要配置
@@ -82,6 +88,7 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
             }
             String lastAccessUrl = this.getLastAccessUrl(request);
             if (lastAccessUrl != null && !isMobile){
+                logger.info("redirect: {}", lastAccessUrl);
                 response.sendRedirect(lastAccessUrl);
                 return false;
             }
@@ -95,17 +102,16 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
             }
         }
 
-        request.setAttribute("currentUser", user);
+        if (null != user) {
+            request.setAttribute("currentUser", user);
+        }
         if (!isMobile && request.getMethod().equalsIgnoreCase(GET)){
             request.setAttribute(CSRF, new CSRFToken(request, response));
         }
 
         c.verifyAccess(request.getRequestURI());
-
-        if (c != null){
-            c.init();
-            request.setAttribute("menu", c.getMenu());
-        }
+        c.init();
+        request.setAttribute("menu", c.getMenu());
 
         return true;
     }
