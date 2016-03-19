@@ -38,7 +38,7 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         String url = request.getRequestURI();
-        if (url.startsWith("/assets/")){
+        if (url.startsWith(PATH_ASSETS)){
             return;
         }
 
@@ -70,8 +70,15 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
         try{
 
             user = c.verifyCookie(request, response);
-            if (user != null && logger.isDebugEnabled()){
-                logger.debug("preHandle verifyCookie is OK. User={}", user);
+            if (user != null){
+                if (logger.isDebugEnabled()) {
+                    logger.debug("preHandle verifyCookie is OK. User={}", user);
+                }
+            }
+            if (isMobile){
+                if (logger.isDebugEnabled()) {
+                    logger.debug("preHandle verifyCookie. User={}", user);
+                }
             }
             String lastAccessUrl = this.getLastAccessUrl(request);
             if (lastAccessUrl != null && !isMobile){

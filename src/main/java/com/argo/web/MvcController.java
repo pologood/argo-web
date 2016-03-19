@@ -50,11 +50,8 @@ public abstract class MvcController implements InitializingBean {
     public <T extends UserIdentity> T getCurrentUser() throws UnauthorizedException {
         RequestAttributes ra = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) ra).getRequest();
-//        if (logger.isDebugEnabled()) {
-//            logger.debug("getCurrentUser From Request");
-//        }
         T o = (T) request.getAttribute("currentUser");
-        if (this.needLogin() && (o == null)) {
+        if (o == null) {
             throw new UnauthorizedException();
         }
         return o;
@@ -77,7 +74,11 @@ public abstract class MvcController implements InitializingBean {
         } catch (UnauthorizedException e) {
             logger.debug("UserNotAuthorizationException currentUid="+currentUid);
         }
-        if (null != authorizationService && StringUtils.isNotBlank(currentUid)){
+        if (null == authorizationService){
+            logger.error("authorizationService is NULL");
+            return null;
+        }
+        if (StringUtils.isNotBlank(currentUid)){
             T baseUser = (T) this.authorizationService.verifyCookie(currentUid);
             return baseUser;
         }
@@ -223,5 +224,8 @@ public abstract class MvcController implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         this.setAuthorizationService(this.getAuthorizationService());
+        if (logger.isDebugEnabled()){
+            logger.debug("authorizationService: {}", authorizationService);
+        }
     }
 }
