@@ -46,6 +46,11 @@ public abstract class MvcController implements InitializingBean {
      * @throws com.argo.security.exception.UnauthorizedException 用户验证不通过异常
      */
     public <T extends UserIdentity> T getCurrentUser() throws UnauthorizedException {
+        if (null == authorizationService){
+            if (logger.isDebugEnabled()){
+                logger.debug("authorizationService: {}", authorizationService);
+            }
+        }
         RequestAttributes ra = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes) ra).getRequest();
         T o = (T) request.getAttribute("currentUser");
@@ -222,8 +227,5 @@ public abstract class MvcController implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         this.setAuthorizationService(this.getAuthorizationService());
-        if (logger.isDebugEnabled()){
-            logger.debug("authorizationService: {}", authorizationService);
-        }
     }
 }

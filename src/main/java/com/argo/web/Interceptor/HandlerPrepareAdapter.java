@@ -52,16 +52,18 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
             HttpServletResponse response,
             Object handler) throws Exception {
 
-        if (logger.isDebugEnabled()) {
-            logger.debug("x-app: {}", request.getHeader(X_MOBILE), request.getMethod());
-        }
-        boolean isMobile = request.getHeader(X_MOBILE) != null;
 
         String url = request.getRequestURI();
         url = url.replace(request.getContextPath(), "");
         if (url.startsWith(PATH_ASSETS)){
             return true;
         }
+
+        if (logger.isDebugEnabled()) {
+            logger.debug("x-app: {}", request.getHeader(X_MOBILE), request.getMethod());
+        }
+        boolean isMobile = request.getHeader(X_MOBILE) != null;
+
 
         WebContext.getContext().mark();
         WebContext.getContext().setRootPath(request.getContextPath());
