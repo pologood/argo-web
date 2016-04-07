@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class WebConfig {
 
-    private static final String confName = "web.yaml";
+    private static final String defaultConfName = "web.yaml";
 
     public static WebConfig instance = null;
 
@@ -20,6 +20,14 @@ public class WebConfig {
      * @throws IOException
      */
     public synchronized static void load() throws IOException {
+        load(defaultConfName);
+    }
+
+    /**
+     * 加载配置信息
+     * @throws IOException
+     */
+    public synchronized static void load(String confName) throws IOException {
         if (instance != null){
             return;
         }
@@ -37,6 +45,8 @@ public class WebConfig {
     private String logout;
     private Boolean anonymous;
     private String attachmentview;
+    private String frontEndDomain;
+
     /**
      * 静态文件访问域名
      */
@@ -149,4 +159,11 @@ public class WebConfig {
         return extra;
     }
 
+    public String getFrontEndDomain() {
+        return frontEndDomain;
+    }
+
+    public void setFrontEndDomain(String frontEndDomain) {
+        this.frontEndDomain = frontEndDomain;
+    }
 }
