@@ -27,12 +27,15 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
     public static final String GET = "GET";
     public static final String CSRF = "csrf";
     public static final String PATH_ASSETS = "/assets/";
+
+    public static HandlerPrepareAdapter instance = null;
+
     private final String cookieId = "_after";
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public HandlerPrepareAdapter() {
-
+        instance = this;
     }
 
     @Override
@@ -88,12 +91,12 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
                     logger.debug("preHandle verifyCookie. User={}", user);
                 }
             }
-            String lastAccessUrl = this.getLastAccessUrl(request);
-            if (lastAccessUrl != null && !isMobile){
-                logger.info("redirect: {}", lastAccessUrl);
-                response.sendRedirect(lastAccessUrl);
-                return false;
-            }
+//            String lastAccessUrl = this.getLastAccessUrl(request);
+//            if (lastAccessUrl != null && !isMobile){
+//                logger.info("redirect: {}", lastAccessUrl);
+//                response.sendRedirect(lastAccessUrl);
+//                return false;
+//            }
 
         }catch (UnauthorizedException ex){
             if (c.needLogin()) {
@@ -134,7 +137,7 @@ public class HandlerPrepareAdapter extends HandlerInterceptorAdapter {
      * @param request
      * @return
      */
-    private String getLastAccessUrl(HttpServletRequest request){
+    public String getLastAccessUrl(HttpServletRequest request){
         Cookie cookie = SessionCookieHolder.getCookie(request, cookieId);
         if (cookie == null){
             return null;

@@ -47,6 +47,8 @@ public class WebConfig {
     private String attachmentview;
     private String frontEndDomain;
 
+    private Integer captchaLen = 4;
+
     /**
      * 静态文件访问域名
      */
@@ -165,5 +167,13 @@ public class WebConfig {
 
     public void setFrontEndDomain(String frontEndDomain) {
         this.frontEndDomain = frontEndDomain;
+    }
+
+    public Integer getCaptchaLen() {
+        return captchaLen;
+    }
+
+    public void setCaptchaLen(Integer captchaLen) {
+        this.captchaLen = captchaLen;
     }
 }

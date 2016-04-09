@@ -31,10 +31,10 @@ public class CaptchaController extends MvcController {
         if (logger.isDebugEnabled()){
             logger.debug("TS:{}, UA: {}", ts, request.getHeader("User-Agent"));
         }
-        String token = CaptchaComponent.generateToken(response);
+        String token = this.captchaComponent.generateToken(response);
         setResponseHeaders(response);
         try {
-            CaptchaComponent.draw(token, response.getOutputStream());
+            this.captchaComponent.draw(token, response.getOutputStream());
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
         }
@@ -48,7 +48,7 @@ public class CaptchaController extends MvcController {
      *            response object to be modified
      */
     protected void setResponseHeaders(HttpServletResponse resp) {
-        resp.setContentType("image/" + CaptchaComponent.getFormat());
+        resp.setContentType("image/" + this.captchaComponent.getFormat());
         resp.setHeader("Cache-Control", "no-cache, no-store");
         resp.setHeader("Pragma", "no-cache");
         long time = System.currentTimeMillis();

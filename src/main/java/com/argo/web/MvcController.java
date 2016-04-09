@@ -9,12 +9,14 @@ import com.argo.security.exception.PermissionDeniedException;
 import com.argo.security.exception.UnauthorizedException;
 import com.argo.security.service.AuthorizationService;
 import com.argo.web.Interceptor.ExceptionGlobalResolver;
+import com.argo.web.controllers.CaptchaComponent;
 import com.argo.web.protobuf.ProtobufResponse;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -39,6 +41,9 @@ public abstract class MvcController implements InitializingBean {
     protected ExceptionGlobalResolver exceptionGlobalResolver = new ExceptionGlobalResolver();
 
     private AuthorizationService authorizationService;
+
+    @Autowired
+    protected CaptchaComponent captchaComponent;
 
     /**
      * 获取当前用户

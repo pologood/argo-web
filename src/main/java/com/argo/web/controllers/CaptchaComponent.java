@@ -3,10 +3,13 @@ package com.argo.web.controllers;
 import com.argo.security.CookieCipher;
 import com.argo.security.HashProvider;
 import com.argo.security.SessionCookieHolder;
+import com.argo.web.WebConfig;
 import com.github.cage.Cage;
 import com.github.cage.token.RandomTokenGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -16,20 +19,24 @@ import java.io.OutputStream;
 import java.util.Random;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Yaming
- * Date: 2014/12/23
- * Time: 14:51
+ * 验证码
  */
-public class CaptchaComponent {
+@Component
+public class CaptchaComponent implements InitializingBean {
+
+    public static CaptchaComponent instance;
 
     public static final String ID_COOKIE = "c";
 
     protected static Logger logger = LoggerFactory.getLogger(CaptchaComponent.class);
 
-    private static Cage cage = null;
-    static {
-        RandomTokenGenerator generator = new RandomTokenGenerator(new Random(), 4);
+    private Cage cage = null;
+    private void init() {
+        Integer len = WebConfig.instance.getCaptchaLen();
+        if (null == len){
+            len = 4;
+        }
+        RandomTokenGenerator generator = new RandomTokenGenerator(new Random(), len);
         cage = new Cage(null, null, null, null, Cage.DEFAULT_COMPRESS_RATIO, generator, null);
     }
 
@@ -38,7 +45,7 @@ public class CaptchaComponent {
      * @param request
      * @return
      */
-    public static String getToken(HttpServletRequest request){
+    public String getToken(HttpServletRequest request){
         Cookie cookie = SessionCookieHolder.getCookie(request, ID_COOKIE);
         if (cookie != null){
             return cookie.getValue();
@@ -52,7 +59,7 @@ public class CaptchaComponent {
      * @param token
      * @return
      */
-    public static boolean verifyToken(HttpServletRequest request, String token){
+    public boolean verifyToken(HttpServletRequest request, String token){
         String token0 = getToken(request);
         if (token0 == null){
             logger.error("Can't Get Token From Cookie. {}", request.getHeader("User-Agent"));
@@ -72,7 +79,7 @@ public class CaptchaComponent {
      * @param response
      *            where to store the captcha.
      */
-    public static String generateToken(HttpServletResponse response) {
+    public String generateToken(HttpServletResponse response) {
         String token = cage.getTokenGenerator().next().toLowerCase();
         String token0 = HashProvider.md5(token + CookieCipher.getCookieSecretSalt());
         if (logger.isDebugEnabled()){
@@ -82,11 +89,18 @@ public class CaptchaComponent {
         return token;
     }
 
-    public static void draw(String token, OutputStream outputStream) throws IOException {
+    public void draw(String token, OutputStream outputStream) throws IOException {
         cage.draw(token, outputStream);
     }
 
-    public static String getFormat(){
+    public String getFormat(){
         return cage.getFormat();
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        instance = this;
+        WebConfig.load();
+        this.init();
     }
 }
