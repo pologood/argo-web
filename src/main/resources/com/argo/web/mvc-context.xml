@@ -18,7 +18,7 @@
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
             <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
             <bean class="com.argo.web.protobuf.ProtobufHttpMessageConverter" />
-            <bean class="com.argo.web.json.GsonHttpMessageConverter" />
+            <bean class="com.argo.web.json.JsonHttpMessageConverter" />
             <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
         </mvc:message-converters>
     </mvc:annotation-driven>

@@ -3,9 +3,7 @@ package com.argo.web.json;
 /**
  * Created by yaming_deng on 14-8-22.
  */
-import com.argo.util.json.JsonUtil;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpInputMessage;
@@ -18,21 +16,17 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class GsonHttpMessageConverter extends AbstractHttpMessageConverter<Object> {
+public class JsonHttpMessageConverter extends AbstractHttpMessageConverter<Object> {
 
-    protected Logger logger = LoggerFactory.getLogger(GsonHttpMessageConverter.class);
-
-    private Gson gson = null;
+    protected Logger logger = LoggerFactory.getLogger(JsonHttpMessageConverter.class);
 
     public static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
 
-    public GsonHttpMessageConverter(){
+    public JsonHttpMessageConverter(){
         super(new MediaType("application", "json", DEFAULT_CHARSET));
         if (logger.isDebugEnabled()){
-            logger.debug("GsonHttpMessageConverter init.");
+            logger.debug("JsonHttpMessageConverter init.");
         }
-
-        gson = JsonUtil.gson;
     }
 
     @Override
@@ -40,14 +34,10 @@ public class GsonHttpMessageConverter extends AbstractHttpMessageConverter<Objec
                                   HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
 
         if (logger.isDebugEnabled()){
-            logger.debug("readInternal:");
+            logger.debug("readInternal: {}", clazz);
         }
 
-        try{
-            return gson.fromJson(convertStreamToString(inputMessage.getBody()), clazz);
-        }catch(JsonSyntaxException e){
-            throw new HttpMessageNotReadableException("Could not read JSON: " + e.getMessage(), e);
-        }
+        return JSON.parseObject(convertStreamToString(inputMessage.getBody()), clazz);
 
     }
 
@@ -57,19 +47,16 @@ public class GsonHttpMessageConverter extends AbstractHttpMessageConverter<Objec
     }
 
     @Override
-    protected void writeInternal(Object t,
-                                 HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {
+    protected void writeInternal(Object t, HttpOutputMessage outputMessage)
+            throws IOException, HttpMessageNotWritableException {
 
-        //TODO: adapt this to be able to receive a list of json objects too
-
-        String json = gson.toJson(t);
+        String json = JSON.toJSONString(t);
         if (logger.isDebugEnabled()){
             logger.debug("writeInternal: {}", json);
         }
         outputMessage.getBody().write(json.getBytes(DEFAULT_CHARSET));
     }
 
-    //TODO: move this to a more appropriated utils class
     public String convertStreamToString(InputStream is) throws IOException {
         /*
          * To convert the InputStream to String we use the Reader.read(char[]

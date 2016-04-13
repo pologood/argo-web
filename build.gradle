@@ -1,5 +1,5 @@
 group 'com.github.yamingd.argo'
-version '2.4.0'
+version '2.4.1'
 
 apply plugin: 'maven'
 apply plugin: 'java'
@@ -30,8 +30,8 @@ description = 'web collections for common cases'
 dependencies {
     compile 'com.github.yamingd.argo:argo-yaml:1.2'
     compile 'com.github.yamingd.argo:argo-security:2.3.0'
-    compile 'com.github.yamingd.argo:argo-util:2.1'
     compile 'com.github.yamingd.argo:argo-freemarker:2.1'
+    compile 'com.alibaba:fastjson:1.2.8'
     compile 'org.apache.commons:commons-lang3:3.1'
     compile 'commons-codec:commons-codec:1.10'
     compile('org.springframework:spring-context:3.2.11.RELEASE') {
@@ -42,7 +42,7 @@ dependencies {
     compile 'org.hibernate:hibernate-validator:4.3.1.Final'
     compile 'org.aspectj:aspectjrt:1.8.7'
     compile 'org.aspectj:aspectjweaver:1.8.7'
-    compile 'commons-fileupload:commons-fileupload:1.3'
+    compile 'commons-fileupload:commons-fileupload:1.3.1'
     compile 'javax.annotation:jsr250-api:1.0'
     compile 'javax.inject:javax.inject:1'
     compile 'com.github.cage:cage:1.0'
@@ -52,9 +52,7 @@ dependencies {
         exclude(module: 'log4j-over-slf4j')
     }
     compile('javax.servlet:javax.servlet-api:3.1.0') {
-        /* This dependency was originally in the Maven provided scope, but the project was not of type war.
-        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
-        Please review and delete this closure when resolved. */
+
     }
     compile 'org.slf4j:jul-to-slf4j:1.5.11'
     compile 'ch.qos.logback:logback-classic:1.0.13'
