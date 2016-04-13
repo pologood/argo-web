@@ -1,9 +1,9 @@
 package com.argo.web.Interceptor;
 
+import com.alibaba.fastjson.JSON;
 import com.argo.security.exception.PermissionDeniedException;
 import com.argo.security.exception.UnauthorizedException;
 import com.argo.security.exception.UserKickedOffException;
-import com.argo.util.json.JsonUtil;
 import com.argo.web.Enums;
 import com.argo.web.JsonResponse;
 import com.argo.web.WebConfig;
@@ -162,7 +162,7 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
     }
 
     private void writeJson(HttpServletRequest request, HttpServletResponse response, Object o){
-        String json = JsonUtil.toJson(o);
+        String json = JSON.toJSONString(o);
         response.setHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         try {
             response.getWriter().write(json);

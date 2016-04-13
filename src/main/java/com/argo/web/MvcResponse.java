@@ -1,7 +1,5 @@
 package com.argo.web;
 
-import com.google.gson.annotations.Expose;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,31 +8,26 @@ public abstract class MvcResponse implements Serializable {
     /**
      * 返回业务提示或代号
      */
-    @Expose
     protected String msg;
 
     /**
      * 返回业务状态编码
      */
-    @Expose
     protected Integer code;
 
     /**
      * 记录总数
      */
-    @Expose
     protected Integer total;
 
     /**
      * API版本号
      */
-    @Expose
     protected Integer version = 1;
 
     /**
      * 服务端返回的错误代码
      */
-    @Expose
     protected List<String> errors;
 
     public MvcResponse() {

@@ -1,7 +1,6 @@
 package com.argo.web;
 
 import com.google.common.collect.Lists;
-import com.google.gson.annotations.Expose;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +19,6 @@ import java.util.List;
  */
 public class JsonResponse<T> extends MvcResponse {
 
-    @Expose
     protected List<T> data;
 
     /**
