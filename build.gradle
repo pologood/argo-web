@@ -1,5 +1,5 @@
 group 'com.github.yamingd.argo'
-version '2.4.1'
+version '2.4.2'
 
 apply plugin: 'maven'
 apply plugin: 'java'
@@ -30,7 +30,7 @@ description = 'web collections for common cases'
 dependencies {
     compile 'com.github.yamingd.argo:argo-yaml:1.2'
     compile 'com.github.yamingd.argo:argo-security:2.3.0'
-    compile 'com.github.yamingd.argo:argo-freemarker:2.1'
+    compile 'com.github.yamingd.argo:argo-freemarker:2.1.1'
     compile 'com.alibaba:fastjson:1.2.8'
     compile 'org.apache.commons:commons-lang3:3.1'
     compile 'commons-codec:commons-codec:1.10'

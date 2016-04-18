@@ -47,6 +47,9 @@ public class WebConfig {
     private String attachmentview;
     private String frontEndDomain;
 
+    private String csrfSalt;
+    private Integer csrfAge = 3600;
+
     private Integer captchaLen = 4;
 
     /**
@@ -175,5 +178,21 @@ public class WebConfig {
 
     public void setCaptchaLen(Integer captchaLen) {
         this.captchaLen = captchaLen;
+    }
+
+    public String getCsrfSalt() {
+        return csrfSalt;
+    }
+
+    public void setCsrfSalt(String csrfSalt) {
+        this.csrfSalt = csrfSalt;
+    }
+
+    public Integer getCsrfAge() {
+        return csrfAge;
+    }
+
+    public void setCsrfAge(Integer csrfAge) {
+        this.csrfAge = csrfAge;
     }
 }
