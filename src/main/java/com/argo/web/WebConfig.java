@@ -51,6 +51,7 @@ public class WebConfig {
     private Integer csrfAge = 3600;
 
     private Integer captchaLen = 4;
+    private boolean tongjiEnabled = false;
 
     /**
      * 静态文件访问域名
@@ -194,5 +195,13 @@ public class WebConfig {
 
     public void setCsrfAge(Integer csrfAge) {
         this.csrfAge = csrfAge;
+    }
+
+    public boolean isTongjiEnabled() {
+        return tongjiEnabled;
+    }
+
+    public void setTongjiEnabled(boolean tongjiEnabled) {
+        this.tongjiEnabled = tongjiEnabled;
     }
 }
