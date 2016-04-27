@@ -20,12 +20,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created with IntelliJ IDEA.
- * User: yamingdeng
- * Date: 13-11-17
- * Time: 上午10:44
+ *
  */
 public class ExceptionGlobalResolver implements HandlerExceptionResolver {
+
+    public static final String XMLHTTP_REQUEST = "XMLHttpRequest";
+    public static final String X_REQUESTED_WITH = "X-Requested-With";
+    public static final String REDIRECT_TO = "redirectTo";
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -92,37 +93,38 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
     private ModelAndView handleNormalRequest(HttpServletRequest request, HttpServletResponse response, Exception ex) {
         if (ex instanceof UnauthorizedException){
             UnauthorizedException exception = (UnauthorizedException)ex;
-            String loginUrl = WebConfig.instance.getLogin();
+            String loginUrl = WebConfig.instance.getDomain() +  WebConfig.instance.getLogin();
             try {
                 response.setStatus(exception.getStatusCode());
-                Object redirectTo = request.getAttribute("redirectTo");
+                Object redirectTo = request.getAttribute(REDIRECT_TO);
                 if (redirectTo != null){
-                    response.sendRedirect((String) redirectTo);
+                    String location = (String) redirectTo;
+                    response.sendRedirect(WebConfig.instance.getDomain() + location);
                 }else {
                     response.sendRedirect(loginUrl);
                 }
                 return null;
             } catch (IOException e) {
                 logger.error("Redirect Error", e);
-                return new ModelAndView("500");
+                return new ModelAndView("/500");
             }
         }else if (ex instanceof PermissionDeniedException){
             PermissionDeniedException exception = (PermissionDeniedException)ex;
             logger.warn("You do not have permission to access. " + request.getRequestURI());
-            String url = WebConfig.instance.getDenied();
+            String url = WebConfig.instance.getDomain() +  WebConfig.instance.getDenied();
             response.setStatus(exception.getStatusCode());
             try {
                 response.sendRedirect(url);
                 return null;
             } catch (IOException e) {
                 logger.error("Redirect Error", e);
-                return new ModelAndView("500");
+                return new ModelAndView("/500");
             }
         }else{
             String errorString = "Method:"+request.getMethod()+"请求错误:"+request.getRequestURL().toString()+",refererUrl:"+request.getHeader("Referer");
             logger.error(errorString, ex);
             response.setStatus(500);
-            return new ModelAndView("500");
+            return new ModelAndView("/500");
         }
     }
 
@@ -182,6 +184,6 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
     }
 
     protected boolean isAjax(HttpServletRequest request){
-        return "XMLHttpRequest".equalsIgnoreCase(request.getHeader("X-Requested-With"));
+        return XMLHTTP_REQUEST.equalsIgnoreCase(request.getHeader(X_REQUESTED_WITH));
     }
 }
