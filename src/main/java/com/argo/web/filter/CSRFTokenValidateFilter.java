@@ -87,23 +87,9 @@ public class CSRFTokenValidateFilter implements Filter {
      * @throws ServletException
      */
     private void outputErrorResponse(int status, HttpServletResponse response, HttpServletRequest httpRequest) throws IOException, ServletException {
-        if(this.isAjax(httpRequest)){
-            HttpServletResponse resp = response;
-            resp.setStatus(status);
-            resp.getWriter().write("{'error':'You are not allowed to execute this action'}");
-            resp.setContentType("application/json; charset=UTF-8");
-            resp.addHeader("Cache-Control", "no-store");
-            resp.addHeader("Pragma", "no-cache");
-            resp.getWriter().flush();
-            resp.getWriter().close();
-            return;
-        }else{
-
-            HttpServletResponse resp = response;
-            resp.setStatus(status);
-            throw new ServletException("You are not allowed to execute this action.");
-
-        }
+        HttpServletResponse resp = response;
+        resp.setStatus(status);
+        throw new ServletException("You are not allowed to execute this action.");
     }
 
     /**
