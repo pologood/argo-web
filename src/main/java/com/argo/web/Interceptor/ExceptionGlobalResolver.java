@@ -1,9 +1,7 @@
 package com.argo.web.Interceptor;
 
 import com.alibaba.fastjson.JSON;
-import com.argo.security.exception.PermissionDeniedException;
-import com.argo.security.exception.UnauthorizedException;
-import com.argo.security.exception.UserKickedOffException;
+import com.argo.security.exception.*;
 import com.argo.web.Enums;
 import com.argo.web.JsonResponse;
 import com.argo.web.WebConfig;
@@ -108,6 +106,21 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
                 logger.error("Redirect Error", e);
                 return new ModelAndView("/500");
             }
+        }if (ex instanceof CookieInvalidException || ex instanceof CookieExpiredException){
+            String loginUrl = WebConfig.instance.getDomain() +  WebConfig.instance.getLogin();
+            try {
+                Object redirectTo = request.getAttribute(REDIRECT_TO);
+                if (redirectTo != null){
+                    String location = (String) redirectTo;
+                    response.sendRedirect(WebConfig.instance.getDomain() + location);
+                }else {
+                    response.sendRedirect(loginUrl);
+                }
+                return null;
+            } catch (IOException e) {
+                logger.error("Redirect Error", e);
+                return new ModelAndView("/500");
+            }
         }else if (ex instanceof PermissionDeniedException){
             PermissionDeniedException exception = (PermissionDeniedException)ex;
             logger.warn("You do not have permission to access. " + request.getRequestURI());
@@ -123,7 +136,7 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
         }else{
             String errorString = "Method:"+request.getMethod()+"请求错误:"+request.getRequestURL().toString()+",refererUrl:"+request.getHeader("Referer");
             logger.error(errorString, ex);
-            response.setStatus(500);
+            //response.setStatus(500);
             return new ModelAndView("/500");
         }
     }
