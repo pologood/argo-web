@@ -27,7 +27,7 @@ public final class PAppResponseProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\022PAppResponse.proto\"z\n\014PAppResponse\022\013\n\003" +
       "msg\030\001 \001(\t\022\021\n\tsessionId\030\002 \001(\t\022\017\n\007version\030" +
       "\003 \001(\005\022\014\n\004code\030\004 \002(\005\022\r\n\005total\030\005 \001(\005\022\014\n\004da" +
@@ -51,7 +51,7 @@ public final class PAppResponseProto {
     internal_static_PAppResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PAppResponse_descriptor,
-        new String[] { "Msg", "SessionId", "Version", "Code", "Total", "Data", "Errors", });
+        new java.lang.String[] { "Msg", "SessionId", "Version", "Code", "Total", "Data", "Errors", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

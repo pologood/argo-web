@@ -14,7 +14,7 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>optional string msg = 1;</code>
    */
-  String getMsg();
+  java.lang.String getMsg();
   /**
    * <code>optional string msg = 1;</code>
    */
@@ -28,7 +28,7 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>optional string sessionId = 2;</code>
    */
-  String getSessionId();
+  java.lang.String getSessionId();
   /**
    * <code>optional string sessionId = 2;</code>
    */
@@ -78,7 +78,7 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>repeated string errors = 7;</code>
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getErrorsList();
   /**
    * <code>repeated string errors = 7;</code>
@@ -87,7 +87,7 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>repeated string errors = 7;</code>
    */
-  String getErrors(int index);
+  java.lang.String getErrors(int index);
   /**
    * <code>repeated string errors = 7;</code>
    */

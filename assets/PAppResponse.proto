@@ -1,3 +1,4 @@
+syntax = "proto2";
 option java_package = "com.argo.web.protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "PAppResponseProto";

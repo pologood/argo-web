@@ -24,7 +24,7 @@ public  final class PAppResponse extends
     errors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -116,19 +116,19 @@ public  final class PAppResponse extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return PAppResponseProto.internal_static_PAppResponse_descriptor;
+    return com.argo.web.protobuf.PAppResponseProto.internal_static_PAppResponse_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return PAppResponseProto.internal_static_PAppResponse_fieldAccessorTable
+    return com.argo.web.protobuf.PAppResponseProto.internal_static_PAppResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            PAppResponse.class, Builder.class);
+            com.argo.web.protobuf.PAppResponse.class, com.argo.web.protobuf.PAppResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int MSG_FIELD_NUMBER = 1;
-  private volatile Object msg_;
+  private volatile java.lang.Object msg_;
   /**
    * <code>optional string msg = 1;</code>
    */
@@ -138,14 +138,14 @@ public  final class PAppResponse extends
   /**
    * <code>optional string msg = 1;</code>
    */
-  public String getMsg() {
-    Object ref = msg_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public java.lang.String getMsg() {
+    java.lang.Object ref = msg_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       if (bs.isValidUtf8()) {
         msg_ = s;
       }
@@ -157,11 +157,11 @@ public  final class PAppResponse extends
    */
   public com.google.protobuf.ByteString
       getMsgBytes() {
-    Object ref = msg_;
-    if (ref instanceof String) {
+    java.lang.Object ref = msg_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       msg_ = b;
       return b;
     } else {
@@ -170,7 +170,7 @@ public  final class PAppResponse extends
   }
 
   public static final int SESSIONID_FIELD_NUMBER = 2;
-  private volatile Object sessionId_;
+  private volatile java.lang.Object sessionId_;
   /**
    * <code>optional string sessionId = 2;</code>
    */
@@ -180,14 +180,14 @@ public  final class PAppResponse extends
   /**
    * <code>optional string sessionId = 2;</code>
    */
-  public String getSessionId() {
-    Object ref = sessionId_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public java.lang.String getSessionId() {
+    java.lang.Object ref = sessionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       if (bs.isValidUtf8()) {
         sessionId_ = s;
       }
@@ -199,11 +199,11 @@ public  final class PAppResponse extends
    */
   public com.google.protobuf.ByteString
       getSessionIdBytes() {
-    Object ref = sessionId_;
-    if (ref instanceof String) {
+    java.lang.Object ref = sessionId_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       sessionId_ = b;
       return b;
     } else {
@@ -296,7 +296,7 @@ public  final class PAppResponse extends
   /**
    * <code>repeated string errors = 7;</code>
    */
-  public String getErrors(int index) {
+  public java.lang.String getErrors(int index) {
     return errors_.get(index);
   }
   /**
@@ -393,15 +393,15 @@ public  final class PAppResponse extends
   }
 
   private static final long serialVersionUID = 0L;
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof PAppResponse)) {
+    if (!(obj instanceof com.argo.web.protobuf.PAppResponse)) {
       return super.equals(obj);
     }
-    PAppResponse other = (PAppResponse) obj;
+    com.argo.web.protobuf.PAppResponse other = (com.argo.web.protobuf.PAppResponse) obj;
 
     boolean result = true;
     result = result && (hasMsg() == other.hasMsg());
@@ -437,7 +437,7 @@ public  final class PAppResponse extends
     return result;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -477,58 +477,58 @@ public  final class PAppResponse extends
     return hash;
   }
 
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static PAppResponse parseFrom(byte[] data)
+  public static com.argo.web.protobuf.PAppResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static PAppResponse parseFrom(java.io.InputStream input)
+  public static com.argo.web.protobuf.PAppResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static PAppResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.argo.web.protobuf.PAppResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static PAppResponse parseDelimitedFrom(
+  public static com.argo.web.protobuf.PAppResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static PAppResponse parseFrom(
+  public static com.argo.web.protobuf.PAppResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -540,7 +540,7 @@ public  final class PAppResponse extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(PAppResponse prototype) {
+  public static Builder newBuilder(com.argo.web.protobuf.PAppResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -548,7 +548,7 @@ public  final class PAppResponse extends
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
       com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
@@ -560,17 +560,17 @@ public  final class PAppResponse extends
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:PAppResponse)
-      PAppResponseOrBuilder {
+      com.argo.web.protobuf.PAppResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PAppResponseProto.internal_static_PAppResponse_descriptor;
+      return com.argo.web.protobuf.PAppResponseProto.internal_static_PAppResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PAppResponseProto.internal_static_PAppResponse_fieldAccessorTable
+      return com.argo.web.protobuf.PAppResponseProto.internal_static_PAppResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PAppResponse.class, Builder.class);
+              com.argo.web.protobuf.PAppResponse.class, com.argo.web.protobuf.PAppResponse.Builder.class);
     }
 
     // Construct using com.argo.web.protobuf.PAppResponse.newBuilder()
@@ -609,23 +609,23 @@ public  final class PAppResponse extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return PAppResponseProto.internal_static_PAppResponse_descriptor;
+      return com.argo.web.protobuf.PAppResponseProto.internal_static_PAppResponse_descriptor;
     }
 
-    public PAppResponse getDefaultInstanceForType() {
-      return PAppResponse.getDefaultInstance();
+    public com.argo.web.protobuf.PAppResponse getDefaultInstanceForType() {
+      return com.argo.web.protobuf.PAppResponse.getDefaultInstance();
     }
 
-    public PAppResponse build() {
-      PAppResponse result = buildPartial();
+    public com.argo.web.protobuf.PAppResponse build() {
+      com.argo.web.protobuf.PAppResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public PAppResponse buildPartial() {
-      PAppResponse result = new PAppResponse(this);
+    public com.argo.web.protobuf.PAppResponse buildPartial() {
+      com.argo.web.protobuf.PAppResponse result = new com.argo.web.protobuf.PAppResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -690,16 +690,16 @@ public  final class PAppResponse extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof PAppResponse) {
-        return mergeFrom((PAppResponse)other);
+      if (other instanceof com.argo.web.protobuf.PAppResponse) {
+        return mergeFrom((com.argo.web.protobuf.PAppResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(PAppResponse other) {
-      if (other == PAppResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.argo.web.protobuf.PAppResponse other) {
+      if (other == com.argo.web.protobuf.PAppResponse.getDefaultInstance()) return this;
       if (other.hasMsg()) {
         bitField0_ |= 0x00000001;
         msg_ = other.msg_;
@@ -755,11 +755,11 @@ public  final class PAppResponse extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      PAppResponse parsedMessage = null;
+      com.argo.web.protobuf.PAppResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (PAppResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.argo.web.protobuf.PAppResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -770,7 +770,7 @@ public  final class PAppResponse extends
     }
     private int bitField0_;
 
-    private Object msg_ = "";
+    private java.lang.Object msg_ = "";
     /**
      * <code>optional string msg = 1;</code>
      */
@@ -780,18 +780,18 @@ public  final class PAppResponse extends
     /**
      * <code>optional string msg = 1;</code>
      */
-    public String getMsg() {
-      Object ref = msg_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           msg_ = s;
         }
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -799,11 +799,11 @@ public  final class PAppResponse extends
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
-      Object ref = msg_;
+      java.lang.Object ref = msg_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msg_ = b;
         return b;
       } else {
@@ -814,7 +814,7 @@ public  final class PAppResponse extends
      * <code>optional string msg = 1;</code>
      */
     public Builder setMsg(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -846,7 +846,7 @@ public  final class PAppResponse extends
       return this;
     }
 
-    private Object sessionId_ = "";
+    private java.lang.Object sessionId_ = "";
     /**
      * <code>optional string sessionId = 2;</code>
      */
@@ -856,18 +856,18 @@ public  final class PAppResponse extends
     /**
      * <code>optional string sessionId = 2;</code>
      */
-    public String getSessionId() {
-      Object ref = sessionId_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
           sessionId_ = s;
         }
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -875,11 +875,11 @@ public  final class PAppResponse extends
      */
     public com.google.protobuf.ByteString
         getSessionIdBytes() {
-      Object ref = sessionId_;
+      java.lang.Object ref = sessionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sessionId_ = b;
         return b;
       } else {
@@ -890,7 +890,7 @@ public  final class PAppResponse extends
      * <code>optional string sessionId = 2;</code>
      */
     public Builder setSessionId(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1073,7 +1073,7 @@ public  final class PAppResponse extends
      * <code>repeated bytes data = 6;</code>
      */
     public Builder addAllData(
-        Iterable<? extends com.google.protobuf.ByteString> values) {
+        java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
       ensureDataIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, data_);
@@ -1113,7 +1113,7 @@ public  final class PAppResponse extends
     /**
      * <code>repeated string errors = 7;</code>
      */
-    public String getErrors(int index) {
+    public java.lang.String getErrors(int index) {
       return errors_.get(index);
     }
     /**
@@ -1127,7 +1127,7 @@ public  final class PAppResponse extends
      * <code>repeated string errors = 7;</code>
      */
     public Builder setErrors(
-        int index, String value) {
+        int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1140,7 +1140,7 @@ public  final class PAppResponse extends
      * <code>repeated string errors = 7;</code>
      */
     public Builder addErrors(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1153,7 +1153,7 @@ public  final class PAppResponse extends
      * <code>repeated string errors = 7;</code>
      */
     public Builder addAllErrors(
-        Iterable<String> values) {
+        java.lang.Iterable<java.lang.String> values) {
       ensureErrorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, errors_);
@@ -1197,16 +1197,16 @@ public  final class PAppResponse extends
   }
 
   // @@protoc_insertion_point(class_scope:PAppResponse)
-  private static final PAppResponse DEFAULT_INSTANCE;
+  private static final com.argo.web.protobuf.PAppResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new PAppResponse();
+    DEFAULT_INSTANCE = new com.argo.web.protobuf.PAppResponse();
   }
 
-  public static PAppResponse getDefaultInstance() {
+  public static com.argo.web.protobuf.PAppResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  @Deprecated public static final com.google.protobuf.Parser<PAppResponse>
+  @java.lang.Deprecated public static final com.google.protobuf.Parser<PAppResponse>
       PARSER = new com.google.protobuf.AbstractParser<PAppResponse>() {
     public PAppResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
@@ -1220,12 +1220,12 @@ public  final class PAppResponse extends
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<PAppResponse> getParserForType() {
     return PARSER;
   }
 
-  public PAppResponse getDefaultInstanceForType() {
+  public com.argo.web.protobuf.PAppResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
