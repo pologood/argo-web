@@ -34,7 +34,7 @@ static GPBFileDescriptor *PappRequestRoot_FileDescriptor(void) {
   if (!descriptor) {
     GPBDebugCheckRuntimeVersion();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@""
-                                                     syntax:GPBFileSyntaxProto2];
+                                                     syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
@@ -43,13 +43,13 @@ static GPBFileDescriptor *PappRequestRoot_FileDescriptor(void) {
 
 @implementation PAppRequestParam
 
-@dynamic hasName, name;
-@dynamic hasIntValue, intValue;
-@dynamic hasStrValue, strValue;
-@dynamic hasLongValue, longValue;
-@dynamic hasFloatValue, floatValue;
-@dynamic hasBoolValue, boolValue;
-@dynamic hasBytesValue, bytesValue;
+@dynamic name;
+@dynamic intValue;
+@dynamic strValue;
+@dynamic longValue;
+@dynamic floatValue;
+@dynamic boolValue;
+@dynamic bytesValue;
 
 typedef struct PAppRequestParam__storage_ {
   uint32_t _has_storage_[1];
@@ -73,7 +73,7 @@ typedef struct PAppRequestParam__storage_ {
         .number = PAppRequestParam_FieldNumber_Name,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(PAppRequestParam__storage_, name),
-        .flags = GPBFieldRequired,
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
@@ -156,14 +156,14 @@ typedef struct PAppRequestParam__storage_ {
 
 @implementation PAppRequest
 
-@dynamic hasAuthId, authId;
-@dynamic hasSessionId, sessionId;
-@dynamic hasVersion, version;
-@dynamic hasSign, sign;
-@dynamic hasNonce, nonce;
-@dynamic hasUserAgent, userAgent;
-@dynamic hasPath, path;
-@dynamic paramArray, paramArray_Count;
+@dynamic authId;
+@dynamic sessionId;
+@dynamic version;
+@dynamic sign;
+@dynamic nonce;
+@dynamic userAgent;
+@dynamic path;
+@dynamic hasParam, param;
 
 typedef struct PAppRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -174,7 +174,7 @@ typedef struct PAppRequest__storage_ {
   NSString *nonce;
   NSString *userAgent;
   NSString *path;
-  NSMutableArray *paramArray;
+  PAppRequestParam *param;
 } PAppRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -189,7 +189,7 @@ typedef struct PAppRequest__storage_ {
         .number = PAppRequest_FieldNumber_AuthId,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(PAppRequest__storage_, authId),
-        .flags = GPBFieldRequired | GPBFieldTextFormatNameCustom,
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeString,
       },
       {
@@ -247,12 +247,12 @@ typedef struct PAppRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "paramArray",
+        .name = "param",
         .dataTypeSpecific.className = GPBStringifySymbol(PAppRequestParam),
-        .number = PAppRequest_FieldNumber_ParamArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(PAppRequest__storage_, paramArray),
-        .flags = GPBFieldRepeated,
+        .number = PAppRequest_FieldNumber_Param,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(PAppRequest__storage_, param),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };

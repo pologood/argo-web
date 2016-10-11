@@ -58,28 +58,18 @@ typedef GPB_ENUM(PAppRequestParam_FieldNumber) {
 @interface PAppRequestParam : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
-/** Test to see if @c name has been set. */
-@property(nonatomic, readwrite) BOOL hasName;
 
 @property(nonatomic, readwrite) int32_t intValue;
 
-@property(nonatomic, readwrite) BOOL hasIntValue;
 @property(nonatomic, readwrite, copy, null_resettable) NSString *strValue;
-/** Test to see if @c strValue has been set. */
-@property(nonatomic, readwrite) BOOL hasStrValue;
 
 @property(nonatomic, readwrite) int64_t longValue;
 
-@property(nonatomic, readwrite) BOOL hasLongValue;
 @property(nonatomic, readwrite) float floatValue;
 
-@property(nonatomic, readwrite) BOOL hasFloatValue;
 @property(nonatomic, readwrite) BOOL boolValue;
 
-@property(nonatomic, readwrite) BOOL hasBoolValue;
 @property(nonatomic, readwrite, copy, null_resettable) NSData *bytesValue;
-/** Test to see if @c bytesValue has been set. */
-@property(nonatomic, readwrite) BOOL hasBytesValue;
 
 @end
 
@@ -93,41 +83,28 @@ typedef GPB_ENUM(PAppRequest_FieldNumber) {
   PAppRequest_FieldNumber_Nonce = 5,
   PAppRequest_FieldNumber_UserAgent = 6,
   PAppRequest_FieldNumber_Path = 7,
-  PAppRequest_FieldNumber_ParamArray = 8,
+  PAppRequest_FieldNumber_Param = 8,
 };
 
 @interface PAppRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *authId;
-/** Test to see if @c authId has been set. */
-@property(nonatomic, readwrite) BOOL hasAuthId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *sessionId;
-/** Test to see if @c sessionId has been set. */
-@property(nonatomic, readwrite) BOOL hasSessionId;
 
 @property(nonatomic, readwrite) int32_t version;
 
-@property(nonatomic, readwrite) BOOL hasVersion;
 @property(nonatomic, readwrite, copy, null_resettable) NSString *sign;
-/** Test to see if @c sign has been set. */
-@property(nonatomic, readwrite) BOOL hasSign;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *nonce;
-/** Test to see if @c nonce has been set. */
-@property(nonatomic, readwrite) BOOL hasNonce;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userAgent;
-/** Test to see if @c userAgent has been set. */
-@property(nonatomic, readwrite) BOOL hasUserAgent;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *path;
-/** Test to see if @c path has been set. */
-@property(nonatomic, readwrite) BOOL hasPath;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<PAppRequestParam*> *paramArray;
-/** The number of items in @c paramArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger paramArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) PAppRequestParam *param;
+/** Test to see if @c param has been set. */
+@property(nonatomic, readwrite) BOOL hasParam;
 
 @end
 

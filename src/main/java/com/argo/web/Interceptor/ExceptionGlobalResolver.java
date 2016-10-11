@@ -1,6 +1,7 @@
 package com.argo.web.Interceptor;
 
 import com.alibaba.fastjson.JSON;
+import com.argo.security.SessionCookieHolder;
 import com.argo.security.exception.*;
 import com.argo.web.Enums;
 import com.argo.web.JsonResponse;
@@ -16,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import static com.argo.security.SessionCookieHolder.getAuthCookieId;
 
 /**
  *
@@ -107,6 +110,7 @@ public class ExceptionGlobalResolver implements HandlerExceptionResolver {
                 return new ModelAndView("/500");
             }
         }if (ex instanceof CookieInvalidException || ex instanceof CookieExpiredException){
+            SessionCookieHolder.removeCurrentUID(response, getAuthCookieId());
             String loginUrl = WebConfig.instance.getDomain() +  WebConfig.instance.getLogin();
             try {
                 Object redirectTo = request.getAttribute(REDIRECT_TO);

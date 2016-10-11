@@ -44,7 +44,7 @@ public  final class PAppSession extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private PAppSession(
       com.google.protobuf.CodedInputStream input,
@@ -52,8 +52,6 @@ public  final class PAppSession extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -63,146 +61,145 @@ public  final class PAppSession extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            sessionId_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sessionId_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            realName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            realName_ = s;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            userName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userName_ = s;
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             userId_ = input.readInt64();
             break;
           }
           case 42: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000010;
-            secret_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            secret_ = s;
             break;
           }
           case 50: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000020;
-            signinDate_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            signinDate_ = s;
             break;
           }
           case 58: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000040;
-            profileImageUrl_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            profileImageUrl_ = s;
             break;
           }
           case 66: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000080;
-            appName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appName_ = s;
             break;
           }
           case 74: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000100;
-            deviceName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceName_ = s;
             break;
           }
           case 82: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000200;
-            deviceScreenSize_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceScreenSize_ = s;
             break;
           }
           case 90: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000400;
-            osName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osName_ = s;
             break;
           }
           case 98: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000800;
-            osVersion_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osVersion_ = s;
             break;
           }
           case 106: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00001000;
-            packageVersion_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            packageVersion_ = s;
             break;
           }
           case 114: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00002000;
-            packageName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            packageName_ = s;
             break;
           }
           case 122: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00004000;
-            deviceId_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceId_ = s;
             break;
           }
           case 130: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00008000;
-            deviceToken_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceToken_ = s;
             break;
           }
           case 136: {
-            bitField0_ |= 0x00010000;
+
             apnsEnabled_ = input.readInt32();
             break;
           }
           case 146: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00020000;
-            latesAppVers_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            latesAppVers_ = s;
             break;
           }
           case 154: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00040000;
-            localeIdentifier_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            localeIdentifier_ = s;
             break;
           }
           case 165: {
-            bitField0_ |= 0x00080000;
+
             latitude_ = input.readFloat();
             break;
           }
           case 173: {
-            bitField0_ |= 0x00100000;
+
             longitude_ = input.readFloat();
             break;
           }
           case 176: {
-            bitField0_ |= 0x00200000;
+
             cityId_ = input.readInt32();
             break;
           }
           case 184: {
-            bitField0_ |= 0x00400000;
+
             userKind_ = input.readInt32();
             break;
           }
           case 192: {
-            bitField0_ |= 0x00800000;
+
             userDemo_ = input.readInt32();
             break;
           }
@@ -214,7 +211,6 @@ public  final class PAppSession extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -230,15 +226,8 @@ public  final class PAppSession extends
             com.argo.sdk.protobuf.PAppSession.class, com.argo.sdk.protobuf.PAppSession.Builder.class);
   }
 
-  private int bitField0_;
   public static final int SESSIONID_FIELD_NUMBER = 1;
   private volatile java.lang.Object sessionId_;
-  /**
-   * <code>optional string sessionId = 1;</code>
-   */
-  public boolean hasSessionId() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
   /**
    * <code>optional string sessionId = 1;</code>
    */
@@ -250,9 +239,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sessionId_ = s;
-      }
+      sessionId_ = s;
       return s;
     }
   }
@@ -278,12 +265,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string realName = 2;</code>
    */
-  public boolean hasRealName() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional string realName = 2;</code>
-   */
   public java.lang.String getRealName() {
     java.lang.Object ref = realName_;
     if (ref instanceof java.lang.String) {
@@ -292,9 +273,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        realName_ = s;
-      }
+      realName_ = s;
       return s;
     }
   }
@@ -320,12 +299,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string userName = 3;</code>
    */
-  public boolean hasUserName() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
-  /**
-   * <code>optional string userName = 3;</code>
-   */
   public java.lang.String getUserName() {
     java.lang.Object ref = userName_;
     if (ref instanceof java.lang.String) {
@@ -334,9 +307,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        userName_ = s;
-      }
+      userName_ = s;
       return s;
     }
   }
@@ -362,24 +333,12 @@ public  final class PAppSession extends
   /**
    * <code>optional int64 userId = 4;</code>
    */
-  public boolean hasUserId() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
-  /**
-   * <code>optional int64 userId = 4;</code>
-   */
   public long getUserId() {
     return userId_;
   }
 
   public static final int SECRET_FIELD_NUMBER = 5;
   private volatile java.lang.Object secret_;
-  /**
-   * <code>optional string secret = 5;</code>
-   */
-  public boolean hasSecret() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
   /**
    * <code>optional string secret = 5;</code>
    */
@@ -391,9 +350,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        secret_ = s;
-      }
+      secret_ = s;
       return s;
     }
   }
@@ -419,12 +376,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string signinDate = 6;</code>
    */
-  public boolean hasSigninDate() {
-    return ((bitField0_ & 0x00000020) == 0x00000020);
-  }
-  /**
-   * <code>optional string signinDate = 6;</code>
-   */
   public java.lang.String getSigninDate() {
     java.lang.Object ref = signinDate_;
     if (ref instanceof java.lang.String) {
@@ -433,9 +384,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        signinDate_ = s;
-      }
+      signinDate_ = s;
       return s;
     }
   }
@@ -461,12 +410,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string profileImageUrl = 7;</code>
    */
-  public boolean hasProfileImageUrl() {
-    return ((bitField0_ & 0x00000040) == 0x00000040);
-  }
-  /**
-   * <code>optional string profileImageUrl = 7;</code>
-   */
   public java.lang.String getProfileImageUrl() {
     java.lang.Object ref = profileImageUrl_;
     if (ref instanceof java.lang.String) {
@@ -475,9 +418,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        profileImageUrl_ = s;
-      }
+      profileImageUrl_ = s;
       return s;
     }
   }
@@ -503,12 +444,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string appName = 8;</code>
    */
-  public boolean hasAppName() {
-    return ((bitField0_ & 0x00000080) == 0x00000080);
-  }
-  /**
-   * <code>optional string appName = 8;</code>
-   */
   public java.lang.String getAppName() {
     java.lang.Object ref = appName_;
     if (ref instanceof java.lang.String) {
@@ -517,9 +452,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        appName_ = s;
-      }
+      appName_ = s;
       return s;
     }
   }
@@ -545,12 +478,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string deviceName = 9;</code>
    */
-  public boolean hasDeviceName() {
-    return ((bitField0_ & 0x00000100) == 0x00000100);
-  }
-  /**
-   * <code>optional string deviceName = 9;</code>
-   */
   public java.lang.String getDeviceName() {
     java.lang.Object ref = deviceName_;
     if (ref instanceof java.lang.String) {
@@ -559,9 +486,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        deviceName_ = s;
-      }
+      deviceName_ = s;
       return s;
     }
   }
@@ -587,12 +512,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string deviceScreenSize = 10;</code>
    */
-  public boolean hasDeviceScreenSize() {
-    return ((bitField0_ & 0x00000200) == 0x00000200);
-  }
-  /**
-   * <code>optional string deviceScreenSize = 10;</code>
-   */
   public java.lang.String getDeviceScreenSize() {
     java.lang.Object ref = deviceScreenSize_;
     if (ref instanceof java.lang.String) {
@@ -601,9 +520,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        deviceScreenSize_ = s;
-      }
+      deviceScreenSize_ = s;
       return s;
     }
   }
@@ -629,12 +546,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string osName = 11;</code>
    */
-  public boolean hasOsName() {
-    return ((bitField0_ & 0x00000400) == 0x00000400);
-  }
-  /**
-   * <code>optional string osName = 11;</code>
-   */
   public java.lang.String getOsName() {
     java.lang.Object ref = osName_;
     if (ref instanceof java.lang.String) {
@@ -643,9 +554,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        osName_ = s;
-      }
+      osName_ = s;
       return s;
     }
   }
@@ -671,12 +580,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string osVersion = 12;</code>
    */
-  public boolean hasOsVersion() {
-    return ((bitField0_ & 0x00000800) == 0x00000800);
-  }
-  /**
-   * <code>optional string osVersion = 12;</code>
-   */
   public java.lang.String getOsVersion() {
     java.lang.Object ref = osVersion_;
     if (ref instanceof java.lang.String) {
@@ -685,9 +588,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        osVersion_ = s;
-      }
+      osVersion_ = s;
       return s;
     }
   }
@@ -713,12 +614,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string packageVersion = 13;</code>
    */
-  public boolean hasPackageVersion() {
-    return ((bitField0_ & 0x00001000) == 0x00001000);
-  }
-  /**
-   * <code>optional string packageVersion = 13;</code>
-   */
   public java.lang.String getPackageVersion() {
     java.lang.Object ref = packageVersion_;
     if (ref instanceof java.lang.String) {
@@ -727,9 +622,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        packageVersion_ = s;
-      }
+      packageVersion_ = s;
       return s;
     }
   }
@@ -755,12 +648,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string packageName = 14;</code>
    */
-  public boolean hasPackageName() {
-    return ((bitField0_ & 0x00002000) == 0x00002000);
-  }
-  /**
-   * <code>optional string packageName = 14;</code>
-   */
   public java.lang.String getPackageName() {
     java.lang.Object ref = packageName_;
     if (ref instanceof java.lang.String) {
@@ -769,9 +656,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        packageName_ = s;
-      }
+      packageName_ = s;
       return s;
     }
   }
@@ -797,12 +682,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string deviceId = 15;</code>
    */
-  public boolean hasDeviceId() {
-    return ((bitField0_ & 0x00004000) == 0x00004000);
-  }
-  /**
-   * <code>optional string deviceId = 15;</code>
-   */
   public java.lang.String getDeviceId() {
     java.lang.Object ref = deviceId_;
     if (ref instanceof java.lang.String) {
@@ -811,9 +690,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        deviceId_ = s;
-      }
+      deviceId_ = s;
       return s;
     }
   }
@@ -839,12 +716,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string deviceToken = 16;</code>
    */
-  public boolean hasDeviceToken() {
-    return ((bitField0_ & 0x00008000) == 0x00008000);
-  }
-  /**
-   * <code>optional string deviceToken = 16;</code>
-   */
   public java.lang.String getDeviceToken() {
     java.lang.Object ref = deviceToken_;
     if (ref instanceof java.lang.String) {
@@ -853,9 +724,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        deviceToken_ = s;
-      }
+      deviceToken_ = s;
       return s;
     }
   }
@@ -881,24 +750,12 @@ public  final class PAppSession extends
   /**
    * <code>optional int32 apnsEnabled = 17;</code>
    */
-  public boolean hasApnsEnabled() {
-    return ((bitField0_ & 0x00010000) == 0x00010000);
-  }
-  /**
-   * <code>optional int32 apnsEnabled = 17;</code>
-   */
   public int getApnsEnabled() {
     return apnsEnabled_;
   }
 
   public static final int LATESAPPVERS_FIELD_NUMBER = 18;
   private volatile java.lang.Object latesAppVers_;
-  /**
-   * <code>optional string latesAppVers = 18;</code>
-   */
-  public boolean hasLatesAppVers() {
-    return ((bitField0_ & 0x00020000) == 0x00020000);
-  }
   /**
    * <code>optional string latesAppVers = 18;</code>
    */
@@ -910,9 +767,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        latesAppVers_ = s;
-      }
+      latesAppVers_ = s;
       return s;
     }
   }
@@ -938,12 +793,6 @@ public  final class PAppSession extends
   /**
    * <code>optional string localeIdentifier = 19;</code>
    */
-  public boolean hasLocaleIdentifier() {
-    return ((bitField0_ & 0x00040000) == 0x00040000);
-  }
-  /**
-   * <code>optional string localeIdentifier = 19;</code>
-   */
   public java.lang.String getLocaleIdentifier() {
     java.lang.Object ref = localeIdentifier_;
     if (ref instanceof java.lang.String) {
@@ -952,9 +801,7 @@ public  final class PAppSession extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        localeIdentifier_ = s;
-      }
+      localeIdentifier_ = s;
       return s;
     }
   }
@@ -980,24 +827,12 @@ public  final class PAppSession extends
   /**
    * <code>optional float latitude = 20;</code>
    */
-  public boolean hasLatitude() {
-    return ((bitField0_ & 0x00080000) == 0x00080000);
-  }
-  /**
-   * <code>optional float latitude = 20;</code>
-   */
   public float getLatitude() {
     return latitude_;
   }
 
   public static final int LONGITUDE_FIELD_NUMBER = 21;
   private float longitude_;
-  /**
-   * <code>optional float longitude = 21;</code>
-   */
-  public boolean hasLongitude() {
-    return ((bitField0_ & 0x00100000) == 0x00100000);
-  }
   /**
    * <code>optional float longitude = 21;</code>
    */
@@ -1010,12 +845,6 @@ public  final class PAppSession extends
   /**
    * <code>optional int32 cityId = 22;</code>
    */
-  public boolean hasCityId() {
-    return ((bitField0_ & 0x00200000) == 0x00200000);
-  }
-  /**
-   * <code>optional int32 cityId = 22;</code>
-   */
   public int getCityId() {
     return cityId_;
   }
@@ -1025,24 +854,12 @@ public  final class PAppSession extends
   /**
    * <code>optional int32 userKind = 23;</code>
    */
-  public boolean hasUserKind() {
-    return ((bitField0_ & 0x00400000) == 0x00400000);
-  }
-  /**
-   * <code>optional int32 userKind = 23;</code>
-   */
   public int getUserKind() {
     return userKind_;
   }
 
   public static final int USERDEMO_FIELD_NUMBER = 24;
   private int userDemo_;
-  /**
-   * <code>optional int32 userDemo = 24;</code>
-   */
-  public boolean hasUserDemo() {
-    return ((bitField0_ & 0x00800000) == 0x00800000);
-  }
   /**
    * <code>optional int32 userDemo = 24;</code>
    */
@@ -1062,79 +879,78 @@ public  final class PAppSession extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getSessionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sessionId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getRealNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, realName_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getUserNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (userId_ != 0L) {
       output.writeInt64(4, userId_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getSecretBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, secret_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getSigninDateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, signinDate_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getProfileImageUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, profileImageUrl_);
     }
-    if (((bitField0_ & 0x00000080) == 0x00000080)) {
+    if (!getAppNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, appName_);
     }
-    if (((bitField0_ & 0x00000100) == 0x00000100)) {
+    if (!getDeviceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, deviceName_);
     }
-    if (((bitField0_ & 0x00000200) == 0x00000200)) {
+    if (!getDeviceScreenSizeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, deviceScreenSize_);
     }
-    if (((bitField0_ & 0x00000400) == 0x00000400)) {
+    if (!getOsNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, osName_);
     }
-    if (((bitField0_ & 0x00000800) == 0x00000800)) {
+    if (!getOsVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, osVersion_);
     }
-    if (((bitField0_ & 0x00001000) == 0x00001000)) {
+    if (!getPackageVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, packageVersion_);
     }
-    if (((bitField0_ & 0x00002000) == 0x00002000)) {
+    if (!getPackageNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, packageName_);
     }
-    if (((bitField0_ & 0x00004000) == 0x00004000)) {
+    if (!getDeviceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, deviceId_);
     }
-    if (((bitField0_ & 0x00008000) == 0x00008000)) {
+    if (!getDeviceTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, deviceToken_);
     }
-    if (((bitField0_ & 0x00010000) == 0x00010000)) {
+    if (apnsEnabled_ != 0) {
       output.writeInt32(17, apnsEnabled_);
     }
-    if (((bitField0_ & 0x00020000) == 0x00020000)) {
+    if (!getLatesAppVersBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, latesAppVers_);
     }
-    if (((bitField0_ & 0x00040000) == 0x00040000)) {
+    if (!getLocaleIdentifierBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, localeIdentifier_);
     }
-    if (((bitField0_ & 0x00080000) == 0x00080000)) {
+    if (latitude_ != 0F) {
       output.writeFloat(20, latitude_);
     }
-    if (((bitField0_ & 0x00100000) == 0x00100000)) {
+    if (longitude_ != 0F) {
       output.writeFloat(21, longitude_);
     }
-    if (((bitField0_ & 0x00200000) == 0x00200000)) {
+    if (cityId_ != 0) {
       output.writeInt32(22, cityId_);
     }
-    if (((bitField0_ & 0x00400000) == 0x00400000)) {
+    if (userKind_ != 0) {
       output.writeInt32(23, userKind_);
     }
-    if (((bitField0_ & 0x00800000) == 0x00800000)) {
+    if (userDemo_ != 0) {
       output.writeInt32(24, userDemo_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -1142,86 +958,85 @@ public  final class PAppSession extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getSessionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sessionId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getRealNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, realName_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getUserNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (userId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, userId_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getSecretBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, secret_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getSigninDateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, signinDate_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getProfileImageUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, profileImageUrl_);
     }
-    if (((bitField0_ & 0x00000080) == 0x00000080)) {
+    if (!getAppNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, appName_);
     }
-    if (((bitField0_ & 0x00000100) == 0x00000100)) {
+    if (!getDeviceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, deviceName_);
     }
-    if (((bitField0_ & 0x00000200) == 0x00000200)) {
+    if (!getDeviceScreenSizeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, deviceScreenSize_);
     }
-    if (((bitField0_ & 0x00000400) == 0x00000400)) {
+    if (!getOsNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, osName_);
     }
-    if (((bitField0_ & 0x00000800) == 0x00000800)) {
+    if (!getOsVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, osVersion_);
     }
-    if (((bitField0_ & 0x00001000) == 0x00001000)) {
+    if (!getPackageVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, packageVersion_);
     }
-    if (((bitField0_ & 0x00002000) == 0x00002000)) {
+    if (!getPackageNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, packageName_);
     }
-    if (((bitField0_ & 0x00004000) == 0x00004000)) {
+    if (!getDeviceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, deviceId_);
     }
-    if (((bitField0_ & 0x00008000) == 0x00008000)) {
+    if (!getDeviceTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, deviceToken_);
     }
-    if (((bitField0_ & 0x00010000) == 0x00010000)) {
+    if (apnsEnabled_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(17, apnsEnabled_);
     }
-    if (((bitField0_ & 0x00020000) == 0x00020000)) {
+    if (!getLatesAppVersBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, latesAppVers_);
     }
-    if (((bitField0_ & 0x00040000) == 0x00040000)) {
+    if (!getLocaleIdentifierBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, localeIdentifier_);
     }
-    if (((bitField0_ & 0x00080000) == 0x00080000)) {
+    if (latitude_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(20, latitude_);
     }
-    if (((bitField0_ & 0x00100000) == 0x00100000)) {
+    if (longitude_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(21, longitude_);
     }
-    if (((bitField0_ & 0x00200000) == 0x00200000)) {
+    if (cityId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(22, cityId_);
     }
-    if (((bitField0_ & 0x00400000) == 0x00400000)) {
+    if (userKind_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(23, userKind_);
     }
-    if (((bitField0_ & 0x00800000) == 0x00800000)) {
+    if (userDemo_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(24, userDemo_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1238,131 +1053,58 @@ public  final class PAppSession extends
     com.argo.sdk.protobuf.PAppSession other = (com.argo.sdk.protobuf.PAppSession) obj;
 
     boolean result = true;
-    result = result && (hasSessionId() == other.hasSessionId());
-    if (hasSessionId()) {
-      result = result && getSessionId()
-          .equals(other.getSessionId());
-    }
-    result = result && (hasRealName() == other.hasRealName());
-    if (hasRealName()) {
-      result = result && getRealName()
-          .equals(other.getRealName());
-    }
-    result = result && (hasUserName() == other.hasUserName());
-    if (hasUserName()) {
-      result = result && getUserName()
-          .equals(other.getUserName());
-    }
-    result = result && (hasUserId() == other.hasUserId());
-    if (hasUserId()) {
-      result = result && (getUserId()
-          == other.getUserId());
-    }
-    result = result && (hasSecret() == other.hasSecret());
-    if (hasSecret()) {
-      result = result && getSecret()
-          .equals(other.getSecret());
-    }
-    result = result && (hasSigninDate() == other.hasSigninDate());
-    if (hasSigninDate()) {
-      result = result && getSigninDate()
-          .equals(other.getSigninDate());
-    }
-    result = result && (hasProfileImageUrl() == other.hasProfileImageUrl());
-    if (hasProfileImageUrl()) {
-      result = result && getProfileImageUrl()
-          .equals(other.getProfileImageUrl());
-    }
-    result = result && (hasAppName() == other.hasAppName());
-    if (hasAppName()) {
-      result = result && getAppName()
-          .equals(other.getAppName());
-    }
-    result = result && (hasDeviceName() == other.hasDeviceName());
-    if (hasDeviceName()) {
-      result = result && getDeviceName()
-          .equals(other.getDeviceName());
-    }
-    result = result && (hasDeviceScreenSize() == other.hasDeviceScreenSize());
-    if (hasDeviceScreenSize()) {
-      result = result && getDeviceScreenSize()
-          .equals(other.getDeviceScreenSize());
-    }
-    result = result && (hasOsName() == other.hasOsName());
-    if (hasOsName()) {
-      result = result && getOsName()
-          .equals(other.getOsName());
-    }
-    result = result && (hasOsVersion() == other.hasOsVersion());
-    if (hasOsVersion()) {
-      result = result && getOsVersion()
-          .equals(other.getOsVersion());
-    }
-    result = result && (hasPackageVersion() == other.hasPackageVersion());
-    if (hasPackageVersion()) {
-      result = result && getPackageVersion()
-          .equals(other.getPackageVersion());
-    }
-    result = result && (hasPackageName() == other.hasPackageName());
-    if (hasPackageName()) {
-      result = result && getPackageName()
-          .equals(other.getPackageName());
-    }
-    result = result && (hasDeviceId() == other.hasDeviceId());
-    if (hasDeviceId()) {
-      result = result && getDeviceId()
-          .equals(other.getDeviceId());
-    }
-    result = result && (hasDeviceToken() == other.hasDeviceToken());
-    if (hasDeviceToken()) {
-      result = result && getDeviceToken()
-          .equals(other.getDeviceToken());
-    }
-    result = result && (hasApnsEnabled() == other.hasApnsEnabled());
-    if (hasApnsEnabled()) {
-      result = result && (getApnsEnabled()
-          == other.getApnsEnabled());
-    }
-    result = result && (hasLatesAppVers() == other.hasLatesAppVers());
-    if (hasLatesAppVers()) {
-      result = result && getLatesAppVers()
-          .equals(other.getLatesAppVers());
-    }
-    result = result && (hasLocaleIdentifier() == other.hasLocaleIdentifier());
-    if (hasLocaleIdentifier()) {
-      result = result && getLocaleIdentifier()
-          .equals(other.getLocaleIdentifier());
-    }
-    result = result && (hasLatitude() == other.hasLatitude());
-    if (hasLatitude()) {
-      result = result && (
-          java.lang.Float.floatToIntBits(getLatitude())
-          == java.lang.Float.floatToIntBits(
-              other.getLatitude()));
-    }
-    result = result && (hasLongitude() == other.hasLongitude());
-    if (hasLongitude()) {
-      result = result && (
-          java.lang.Float.floatToIntBits(getLongitude())
-          == java.lang.Float.floatToIntBits(
-              other.getLongitude()));
-    }
-    result = result && (hasCityId() == other.hasCityId());
-    if (hasCityId()) {
-      result = result && (getCityId()
-          == other.getCityId());
-    }
-    result = result && (hasUserKind() == other.hasUserKind());
-    if (hasUserKind()) {
-      result = result && (getUserKind()
-          == other.getUserKind());
-    }
-    result = result && (hasUserDemo() == other.hasUserDemo());
-    if (hasUserDemo()) {
-      result = result && (getUserDemo()
-          == other.getUserDemo());
-    }
-    result = result && unknownFields.equals(other.unknownFields);
+    result = result && getSessionId()
+        .equals(other.getSessionId());
+    result = result && getRealName()
+        .equals(other.getRealName());
+    result = result && getUserName()
+        .equals(other.getUserName());
+    result = result && (getUserId()
+        == other.getUserId());
+    result = result && getSecret()
+        .equals(other.getSecret());
+    result = result && getSigninDate()
+        .equals(other.getSigninDate());
+    result = result && getProfileImageUrl()
+        .equals(other.getProfileImageUrl());
+    result = result && getAppName()
+        .equals(other.getAppName());
+    result = result && getDeviceName()
+        .equals(other.getDeviceName());
+    result = result && getDeviceScreenSize()
+        .equals(other.getDeviceScreenSize());
+    result = result && getOsName()
+        .equals(other.getOsName());
+    result = result && getOsVersion()
+        .equals(other.getOsVersion());
+    result = result && getPackageVersion()
+        .equals(other.getPackageVersion());
+    result = result && getPackageName()
+        .equals(other.getPackageName());
+    result = result && getDeviceId()
+        .equals(other.getDeviceId());
+    result = result && getDeviceToken()
+        .equals(other.getDeviceToken());
+    result = result && (getApnsEnabled()
+        == other.getApnsEnabled());
+    result = result && getLatesAppVers()
+        .equals(other.getLatesAppVers());
+    result = result && getLocaleIdentifier()
+        .equals(other.getLocaleIdentifier());
+    result = result && (
+        java.lang.Float.floatToIntBits(getLatitude())
+        == java.lang.Float.floatToIntBits(
+            other.getLatitude()));
+    result = result && (
+        java.lang.Float.floatToIntBits(getLongitude())
+        == java.lang.Float.floatToIntBits(
+            other.getLongitude()));
+    result = result && (getCityId()
+        == other.getCityId());
+    result = result && (getUserKind()
+        == other.getUserKind());
+    result = result && (getUserDemo()
+        == other.getUserDemo());
     return result;
   }
 
@@ -1373,105 +1115,57 @@ public  final class PAppSession extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasSessionId()) {
-      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-      hash = (53 * hash) + getSessionId().hashCode();
-    }
-    if (hasRealName()) {
-      hash = (37 * hash) + REALNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getRealName().hashCode();
-    }
-    if (hasUserName()) {
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-    }
-    if (hasUserId()) {
-      hash = (37 * hash) + USERID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUserId());
-    }
-    if (hasSecret()) {
-      hash = (37 * hash) + SECRET_FIELD_NUMBER;
-      hash = (53 * hash) + getSecret().hashCode();
-    }
-    if (hasSigninDate()) {
-      hash = (37 * hash) + SIGNINDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getSigninDate().hashCode();
-    }
-    if (hasProfileImageUrl()) {
-      hash = (37 * hash) + PROFILEIMAGEURL_FIELD_NUMBER;
-      hash = (53 * hash) + getProfileImageUrl().hashCode();
-    }
-    if (hasAppName()) {
-      hash = (37 * hash) + APPNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getAppName().hashCode();
-    }
-    if (hasDeviceName()) {
-      hash = (37 * hash) + DEVICENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceName().hashCode();
-    }
-    if (hasDeviceScreenSize()) {
-      hash = (37 * hash) + DEVICESCREENSIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceScreenSize().hashCode();
-    }
-    if (hasOsName()) {
-      hash = (37 * hash) + OSNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getOsName().hashCode();
-    }
-    if (hasOsVersion()) {
-      hash = (37 * hash) + OSVERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getOsVersion().hashCode();
-    }
-    if (hasPackageVersion()) {
-      hash = (37 * hash) + PACKAGEVERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getPackageVersion().hashCode();
-    }
-    if (hasPackageName()) {
-      hash = (37 * hash) + PACKAGENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getPackageName().hashCode();
-    }
-    if (hasDeviceId()) {
-      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceId().hashCode();
-    }
-    if (hasDeviceToken()) {
-      hash = (37 * hash) + DEVICETOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceToken().hashCode();
-    }
-    if (hasApnsEnabled()) {
-      hash = (37 * hash) + APNSENABLED_FIELD_NUMBER;
-      hash = (53 * hash) + getApnsEnabled();
-    }
-    if (hasLatesAppVers()) {
-      hash = (37 * hash) + LATESAPPVERS_FIELD_NUMBER;
-      hash = (53 * hash) + getLatesAppVers().hashCode();
-    }
-    if (hasLocaleIdentifier()) {
-      hash = (37 * hash) + LOCALEIDENTIFIER_FIELD_NUMBER;
-      hash = (53 * hash) + getLocaleIdentifier().hashCode();
-    }
-    if (hasLatitude()) {
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getLatitude());
-    }
-    if (hasLongitude()) {
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getLongitude());
-    }
-    if (hasCityId()) {
-      hash = (37 * hash) + CITYID_FIELD_NUMBER;
-      hash = (53 * hash) + getCityId();
-    }
-    if (hasUserKind()) {
-      hash = (37 * hash) + USERKIND_FIELD_NUMBER;
-      hash = (53 * hash) + getUserKind();
-    }
-    if (hasUserDemo()) {
-      hash = (37 * hash) + USERDEMO_FIELD_NUMBER;
-      hash = (53 * hash) + getUserDemo();
-    }
+    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getSessionId().hashCode();
+    hash = (37 * hash) + REALNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getRealName().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + USERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getUserId());
+    hash = (37 * hash) + SECRET_FIELD_NUMBER;
+    hash = (53 * hash) + getSecret().hashCode();
+    hash = (37 * hash) + SIGNINDATE_FIELD_NUMBER;
+    hash = (53 * hash) + getSigninDate().hashCode();
+    hash = (37 * hash) + PROFILEIMAGEURL_FIELD_NUMBER;
+    hash = (53 * hash) + getProfileImageUrl().hashCode();
+    hash = (37 * hash) + APPNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAppName().hashCode();
+    hash = (37 * hash) + DEVICENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceName().hashCode();
+    hash = (37 * hash) + DEVICESCREENSIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceScreenSize().hashCode();
+    hash = (37 * hash) + OSNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOsName().hashCode();
+    hash = (37 * hash) + OSVERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getOsVersion().hashCode();
+    hash = (37 * hash) + PACKAGEVERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getPackageVersion().hashCode();
+    hash = (37 * hash) + PACKAGENAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPackageName().hashCode();
+    hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceId().hashCode();
+    hash = (37 * hash) + DEVICETOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceToken().hashCode();
+    hash = (37 * hash) + APNSENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + getApnsEnabled();
+    hash = (37 * hash) + LATESAPPVERS_FIELD_NUMBER;
+    hash = (53 * hash) + getLatesAppVers().hashCode();
+    hash = (37 * hash) + LOCALEIDENTIFIER_FIELD_NUMBER;
+    hash = (53 * hash) + getLocaleIdentifier().hashCode();
+    hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getLatitude());
+    hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getLongitude());
+    hash = (37 * hash) + CITYID_FIELD_NUMBER;
+    hash = (53 * hash) + getCityId();
+    hash = (37 * hash) + USERKIND_FIELD_NUMBER;
+    hash = (53 * hash) + getUserKind();
+    hash = (37 * hash) + USERDEMO_FIELD_NUMBER;
+    hash = (53 * hash) + getUserDemo();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1591,53 +1285,53 @@ public  final class PAppSession extends
     public Builder clear() {
       super.clear();
       sessionId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       realName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       userName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       userId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       secret_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       signinDate_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       profileImageUrl_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       appName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000080);
+
       deviceName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000100);
+
       deviceScreenSize_ = "";
-      bitField0_ = (bitField0_ & ~0x00000200);
+
       osName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
+
       osVersion_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
+
       packageVersion_ = "";
-      bitField0_ = (bitField0_ & ~0x00001000);
+
       packageName_ = "";
-      bitField0_ = (bitField0_ & ~0x00002000);
+
       deviceId_ = "";
-      bitField0_ = (bitField0_ & ~0x00004000);
+
       deviceToken_ = "";
-      bitField0_ = (bitField0_ & ~0x00008000);
+
       apnsEnabled_ = 0;
-      bitField0_ = (bitField0_ & ~0x00010000);
+
       latesAppVers_ = "";
-      bitField0_ = (bitField0_ & ~0x00020000);
+
       localeIdentifier_ = "";
-      bitField0_ = (bitField0_ & ~0x00040000);
+
       latitude_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00080000);
+
       longitude_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00100000);
+
       cityId_ = 0;
-      bitField0_ = (bitField0_ & ~0x00200000);
+
       userKind_ = 0;
-      bitField0_ = (bitField0_ & ~0x00400000);
+
       userDemo_ = 0;
-      bitField0_ = (bitField0_ & ~0x00800000);
+
       return this;
     }
 
@@ -1660,105 +1354,30 @@ public  final class PAppSession extends
 
     public com.argo.sdk.protobuf.PAppSession buildPartial() {
       com.argo.sdk.protobuf.PAppSession result = new com.argo.sdk.protobuf.PAppSession(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.sessionId_ = sessionId_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.realName_ = realName_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.userName_ = userName_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.userId_ = userId_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.secret_ = secret_;
-      if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-        to_bitField0_ |= 0x00000020;
-      }
       result.signinDate_ = signinDate_;
-      if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-        to_bitField0_ |= 0x00000040;
-      }
       result.profileImageUrl_ = profileImageUrl_;
-      if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-        to_bitField0_ |= 0x00000080;
-      }
       result.appName_ = appName_;
-      if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-        to_bitField0_ |= 0x00000100;
-      }
       result.deviceName_ = deviceName_;
-      if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-        to_bitField0_ |= 0x00000200;
-      }
       result.deviceScreenSize_ = deviceScreenSize_;
-      if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-        to_bitField0_ |= 0x00000400;
-      }
       result.osName_ = osName_;
-      if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-        to_bitField0_ |= 0x00000800;
-      }
       result.osVersion_ = osVersion_;
-      if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-        to_bitField0_ |= 0x00001000;
-      }
       result.packageVersion_ = packageVersion_;
-      if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-        to_bitField0_ |= 0x00002000;
-      }
       result.packageName_ = packageName_;
-      if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-        to_bitField0_ |= 0x00004000;
-      }
       result.deviceId_ = deviceId_;
-      if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-        to_bitField0_ |= 0x00008000;
-      }
       result.deviceToken_ = deviceToken_;
-      if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-        to_bitField0_ |= 0x00010000;
-      }
       result.apnsEnabled_ = apnsEnabled_;
-      if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-        to_bitField0_ |= 0x00020000;
-      }
       result.latesAppVers_ = latesAppVers_;
-      if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-        to_bitField0_ |= 0x00040000;
-      }
       result.localeIdentifier_ = localeIdentifier_;
-      if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-        to_bitField0_ |= 0x00080000;
-      }
       result.latitude_ = latitude_;
-      if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
-        to_bitField0_ |= 0x00100000;
-      }
       result.longitude_ = longitude_;
-      if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-        to_bitField0_ |= 0x00200000;
-      }
       result.cityId_ = cityId_;
-      if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
-        to_bitField0_ |= 0x00400000;
-      }
       result.userKind_ = userKind_;
-      if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
-        to_bitField0_ |= 0x00800000;
-      }
       result.userDemo_ = userDemo_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1800,113 +1419,95 @@ public  final class PAppSession extends
 
     public Builder mergeFrom(com.argo.sdk.protobuf.PAppSession other) {
       if (other == com.argo.sdk.protobuf.PAppSession.getDefaultInstance()) return this;
-      if (other.hasSessionId()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
         onChanged();
       }
-      if (other.hasRealName()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getRealName().isEmpty()) {
         realName_ = other.realName_;
         onChanged();
       }
-      if (other.hasUserName()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getUserName().isEmpty()) {
         userName_ = other.userName_;
         onChanged();
       }
-      if (other.hasUserId()) {
+      if (other.getUserId() != 0L) {
         setUserId(other.getUserId());
       }
-      if (other.hasSecret()) {
-        bitField0_ |= 0x00000010;
+      if (!other.getSecret().isEmpty()) {
         secret_ = other.secret_;
         onChanged();
       }
-      if (other.hasSigninDate()) {
-        bitField0_ |= 0x00000020;
+      if (!other.getSigninDate().isEmpty()) {
         signinDate_ = other.signinDate_;
         onChanged();
       }
-      if (other.hasProfileImageUrl()) {
-        bitField0_ |= 0x00000040;
+      if (!other.getProfileImageUrl().isEmpty()) {
         profileImageUrl_ = other.profileImageUrl_;
         onChanged();
       }
-      if (other.hasAppName()) {
-        bitField0_ |= 0x00000080;
+      if (!other.getAppName().isEmpty()) {
         appName_ = other.appName_;
         onChanged();
       }
-      if (other.hasDeviceName()) {
-        bitField0_ |= 0x00000100;
+      if (!other.getDeviceName().isEmpty()) {
         deviceName_ = other.deviceName_;
         onChanged();
       }
-      if (other.hasDeviceScreenSize()) {
-        bitField0_ |= 0x00000200;
+      if (!other.getDeviceScreenSize().isEmpty()) {
         deviceScreenSize_ = other.deviceScreenSize_;
         onChanged();
       }
-      if (other.hasOsName()) {
-        bitField0_ |= 0x00000400;
+      if (!other.getOsName().isEmpty()) {
         osName_ = other.osName_;
         onChanged();
       }
-      if (other.hasOsVersion()) {
-        bitField0_ |= 0x00000800;
+      if (!other.getOsVersion().isEmpty()) {
         osVersion_ = other.osVersion_;
         onChanged();
       }
-      if (other.hasPackageVersion()) {
-        bitField0_ |= 0x00001000;
+      if (!other.getPackageVersion().isEmpty()) {
         packageVersion_ = other.packageVersion_;
         onChanged();
       }
-      if (other.hasPackageName()) {
-        bitField0_ |= 0x00002000;
+      if (!other.getPackageName().isEmpty()) {
         packageName_ = other.packageName_;
         onChanged();
       }
-      if (other.hasDeviceId()) {
-        bitField0_ |= 0x00004000;
+      if (!other.getDeviceId().isEmpty()) {
         deviceId_ = other.deviceId_;
         onChanged();
       }
-      if (other.hasDeviceToken()) {
-        bitField0_ |= 0x00008000;
+      if (!other.getDeviceToken().isEmpty()) {
         deviceToken_ = other.deviceToken_;
         onChanged();
       }
-      if (other.hasApnsEnabled()) {
+      if (other.getApnsEnabled() != 0) {
         setApnsEnabled(other.getApnsEnabled());
       }
-      if (other.hasLatesAppVers()) {
-        bitField0_ |= 0x00020000;
+      if (!other.getLatesAppVers().isEmpty()) {
         latesAppVers_ = other.latesAppVers_;
         onChanged();
       }
-      if (other.hasLocaleIdentifier()) {
-        bitField0_ |= 0x00040000;
+      if (!other.getLocaleIdentifier().isEmpty()) {
         localeIdentifier_ = other.localeIdentifier_;
         onChanged();
       }
-      if (other.hasLatitude()) {
+      if (other.getLatitude() != 0F) {
         setLatitude(other.getLatitude());
       }
-      if (other.hasLongitude()) {
+      if (other.getLongitude() != 0F) {
         setLongitude(other.getLongitude());
       }
-      if (other.hasCityId()) {
+      if (other.getCityId() != 0) {
         setCityId(other.getCityId());
       }
-      if (other.hasUserKind()) {
+      if (other.getUserKind() != 0) {
         setUserKind(other.getUserKind());
       }
-      if (other.hasUserDemo()) {
+      if (other.getUserDemo() != 0) {
         setUserDemo(other.getUserDemo());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -1932,15 +1533,8 @@ public  final class PAppSession extends
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object sessionId_ = "";
-    /**
-     * <code>optional string sessionId = 1;</code>
-     */
-    public boolean hasSessionId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
     /**
      * <code>optional string sessionId = 1;</code>
      */
@@ -1950,9 +1544,7 @@ public  final class PAppSession extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sessionId_ = s;
-        }
+        sessionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1982,7 +1574,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       sessionId_ = value;
       onChanged();
       return this;
@@ -1991,7 +1583,7 @@ public  final class PAppSession extends
      * <code>optional string sessionId = 1;</code>
      */
     public Builder clearSessionId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       sessionId_ = getDefaultInstance().getSessionId();
       onChanged();
       return this;
@@ -2004,7 +1596,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       sessionId_ = value;
       onChanged();
       return this;
@@ -2014,21 +1607,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string realName = 2;</code>
      */
-    public boolean hasRealName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string realName = 2;</code>
-     */
     public java.lang.String getRealName() {
       java.lang.Object ref = realName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          realName_ = s;
-        }
+        realName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2058,7 +1643,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       realName_ = value;
       onChanged();
       return this;
@@ -2067,7 +1652,7 @@ public  final class PAppSession extends
      * <code>optional string realName = 2;</code>
      */
     public Builder clearRealName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       realName_ = getDefaultInstance().getRealName();
       onChanged();
       return this;
@@ -2080,7 +1665,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       realName_ = value;
       onChanged();
       return this;
@@ -2090,21 +1676,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string userName = 3;</code>
      */
-    public boolean hasUserName() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string userName = 3;</code>
-     */
     public java.lang.String getUserName() {
       java.lang.Object ref = userName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          userName_ = s;
-        }
+        userName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2134,7 +1712,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       userName_ = value;
       onChanged();
       return this;
@@ -2143,7 +1721,7 @@ public  final class PAppSession extends
      * <code>optional string userName = 3;</code>
      */
     public Builder clearUserName() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       userName_ = getDefaultInstance().getUserName();
       onChanged();
       return this;
@@ -2156,19 +1734,14 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       userName_ = value;
       onChanged();
       return this;
     }
 
     private long userId_ ;
-    /**
-     * <code>optional int64 userId = 4;</code>
-     */
-    public boolean hasUserId() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
     /**
      * <code>optional int64 userId = 4;</code>
      */
@@ -2179,7 +1752,7 @@ public  final class PAppSession extends
      * <code>optional int64 userId = 4;</code>
      */
     public Builder setUserId(long value) {
-      bitField0_ |= 0x00000008;
+      
       userId_ = value;
       onChanged();
       return this;
@@ -2188,7 +1761,7 @@ public  final class PAppSession extends
      * <code>optional int64 userId = 4;</code>
      */
     public Builder clearUserId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       userId_ = 0L;
       onChanged();
       return this;
@@ -2198,21 +1771,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string secret = 5;</code>
      */
-    public boolean hasSecret() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional string secret = 5;</code>
-     */
     public java.lang.String getSecret() {
       java.lang.Object ref = secret_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          secret_ = s;
-        }
+        secret_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2242,7 +1807,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
       secret_ = value;
       onChanged();
       return this;
@@ -2251,7 +1816,7 @@ public  final class PAppSession extends
      * <code>optional string secret = 5;</code>
      */
     public Builder clearSecret() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       secret_ = getDefaultInstance().getSecret();
       onChanged();
       return this;
@@ -2264,7 +1829,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+      
       secret_ = value;
       onChanged();
       return this;
@@ -2274,21 +1840,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string signinDate = 6;</code>
      */
-    public boolean hasSigninDate() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string signinDate = 6;</code>
-     */
     public java.lang.String getSigninDate() {
       java.lang.Object ref = signinDate_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          signinDate_ = s;
-        }
+        signinDate_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2318,7 +1876,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  
       signinDate_ = value;
       onChanged();
       return this;
@@ -2327,7 +1885,7 @@ public  final class PAppSession extends
      * <code>optional string signinDate = 6;</code>
      */
     public Builder clearSigninDate() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       signinDate_ = getDefaultInstance().getSigninDate();
       onChanged();
       return this;
@@ -2340,7 +1898,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  checkByteStringIsUtf8(value);
+      
       signinDate_ = value;
       onChanged();
       return this;
@@ -2350,21 +1909,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string profileImageUrl = 7;</code>
      */
-    public boolean hasProfileImageUrl() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional string profileImageUrl = 7;</code>
-     */
     public java.lang.String getProfileImageUrl() {
       java.lang.Object ref = profileImageUrl_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          profileImageUrl_ = s;
-        }
+        profileImageUrl_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2394,7 +1945,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
       profileImageUrl_ = value;
       onChanged();
       return this;
@@ -2403,7 +1954,7 @@ public  final class PAppSession extends
      * <code>optional string profileImageUrl = 7;</code>
      */
     public Builder clearProfileImageUrl() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       profileImageUrl_ = getDefaultInstance().getProfileImageUrl();
       onChanged();
       return this;
@@ -2416,7 +1967,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+      
       profileImageUrl_ = value;
       onChanged();
       return this;
@@ -2426,21 +1978,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string appName = 8;</code>
      */
-    public boolean hasAppName() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    /**
-     * <code>optional string appName = 8;</code>
-     */
     public java.lang.String getAppName() {
       java.lang.Object ref = appName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          appName_ = s;
-        }
+        appName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2470,7 +2014,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  
       appName_ = value;
       onChanged();
       return this;
@@ -2479,7 +2023,7 @@ public  final class PAppSession extends
      * <code>optional string appName = 8;</code>
      */
     public Builder clearAppName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      
       appName_ = getDefaultInstance().getAppName();
       onChanged();
       return this;
@@ -2492,7 +2036,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  checkByteStringIsUtf8(value);
+      
       appName_ = value;
       onChanged();
       return this;
@@ -2502,21 +2047,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string deviceName = 9;</code>
      */
-    public boolean hasDeviceName() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <code>optional string deviceName = 9;</code>
-     */
     public java.lang.String getDeviceName() {
       java.lang.Object ref = deviceName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          deviceName_ = s;
-        }
+        deviceName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2546,7 +2083,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  
       deviceName_ = value;
       onChanged();
       return this;
@@ -2555,7 +2092,7 @@ public  final class PAppSession extends
      * <code>optional string deviceName = 9;</code>
      */
     public Builder clearDeviceName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      
       deviceName_ = getDefaultInstance().getDeviceName();
       onChanged();
       return this;
@@ -2568,7 +2105,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  checkByteStringIsUtf8(value);
+      
       deviceName_ = value;
       onChanged();
       return this;
@@ -2578,21 +2116,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string deviceScreenSize = 10;</code>
      */
-    public boolean hasDeviceScreenSize() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional string deviceScreenSize = 10;</code>
-     */
     public java.lang.String getDeviceScreenSize() {
       java.lang.Object ref = deviceScreenSize_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          deviceScreenSize_ = s;
-        }
+        deviceScreenSize_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2622,7 +2152,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  
       deviceScreenSize_ = value;
       onChanged();
       return this;
@@ -2631,7 +2161,7 @@ public  final class PAppSession extends
      * <code>optional string deviceScreenSize = 10;</code>
      */
     public Builder clearDeviceScreenSize() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      
       deviceScreenSize_ = getDefaultInstance().getDeviceScreenSize();
       onChanged();
       return this;
@@ -2644,7 +2174,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  checkByteStringIsUtf8(value);
+      
       deviceScreenSize_ = value;
       onChanged();
       return this;
@@ -2654,21 +2185,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string osName = 11;</code>
      */
-    public boolean hasOsName() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    /**
-     * <code>optional string osName = 11;</code>
-     */
     public java.lang.String getOsName() {
       java.lang.Object ref = osName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          osName_ = s;
-        }
+        osName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2698,7 +2221,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  
       osName_ = value;
       onChanged();
       return this;
@@ -2707,7 +2230,7 @@ public  final class PAppSession extends
      * <code>optional string osName = 11;</code>
      */
     public Builder clearOsName() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      
       osName_ = getDefaultInstance().getOsName();
       onChanged();
       return this;
@@ -2720,7 +2243,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  checkByteStringIsUtf8(value);
+      
       osName_ = value;
       onChanged();
       return this;
@@ -2730,21 +2254,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string osVersion = 12;</code>
      */
-    public boolean hasOsVersion() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
-    }
-    /**
-     * <code>optional string osVersion = 12;</code>
-     */
     public java.lang.String getOsVersion() {
       java.lang.Object ref = osVersion_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          osVersion_ = s;
-        }
+        osVersion_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2774,7 +2290,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  
       osVersion_ = value;
       onChanged();
       return this;
@@ -2783,7 +2299,7 @@ public  final class PAppSession extends
      * <code>optional string osVersion = 12;</code>
      */
     public Builder clearOsVersion() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      
       osVersion_ = getDefaultInstance().getOsVersion();
       onChanged();
       return this;
@@ -2796,7 +2312,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  checkByteStringIsUtf8(value);
+      
       osVersion_ = value;
       onChanged();
       return this;
@@ -2806,21 +2323,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string packageVersion = 13;</code>
      */
-    public boolean hasPackageVersion() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    /**
-     * <code>optional string packageVersion = 13;</code>
-     */
     public java.lang.String getPackageVersion() {
       java.lang.Object ref = packageVersion_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          packageVersion_ = s;
-        }
+        packageVersion_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2850,7 +2359,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  
       packageVersion_ = value;
       onChanged();
       return this;
@@ -2859,7 +2368,7 @@ public  final class PAppSession extends
      * <code>optional string packageVersion = 13;</code>
      */
     public Builder clearPackageVersion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      
       packageVersion_ = getDefaultInstance().getPackageVersion();
       onChanged();
       return this;
@@ -2872,7 +2381,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  checkByteStringIsUtf8(value);
+      
       packageVersion_ = value;
       onChanged();
       return this;
@@ -2882,21 +2392,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string packageName = 14;</code>
      */
-    public boolean hasPackageName() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
-    }
-    /**
-     * <code>optional string packageName = 14;</code>
-     */
     public java.lang.String getPackageName() {
       java.lang.Object ref = packageName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          packageName_ = s;
-        }
+        packageName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2926,7 +2428,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  
       packageName_ = value;
       onChanged();
       return this;
@@ -2935,7 +2437,7 @@ public  final class PAppSession extends
      * <code>optional string packageName = 14;</code>
      */
     public Builder clearPackageName() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      
       packageName_ = getDefaultInstance().getPackageName();
       onChanged();
       return this;
@@ -2948,7 +2450,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  checkByteStringIsUtf8(value);
+      
       packageName_ = value;
       onChanged();
       return this;
@@ -2958,21 +2461,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string deviceId = 15;</code>
      */
-    public boolean hasDeviceId() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    /**
-     * <code>optional string deviceId = 15;</code>
-     */
     public java.lang.String getDeviceId() {
       java.lang.Object ref = deviceId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          deviceId_ = s;
-        }
+        deviceId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3002,7 +2497,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  
       deviceId_ = value;
       onChanged();
       return this;
@@ -3011,7 +2506,7 @@ public  final class PAppSession extends
      * <code>optional string deviceId = 15;</code>
      */
     public Builder clearDeviceId() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      
       deviceId_ = getDefaultInstance().getDeviceId();
       onChanged();
       return this;
@@ -3024,7 +2519,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  checkByteStringIsUtf8(value);
+      
       deviceId_ = value;
       onChanged();
       return this;
@@ -3034,21 +2530,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string deviceToken = 16;</code>
      */
-    public boolean hasDeviceToken() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    /**
-     * <code>optional string deviceToken = 16;</code>
-     */
     public java.lang.String getDeviceToken() {
       java.lang.Object ref = deviceToken_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          deviceToken_ = s;
-        }
+        deviceToken_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3078,7 +2566,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  
       deviceToken_ = value;
       onChanged();
       return this;
@@ -3087,7 +2575,7 @@ public  final class PAppSession extends
      * <code>optional string deviceToken = 16;</code>
      */
     public Builder clearDeviceToken() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      
       deviceToken_ = getDefaultInstance().getDeviceToken();
       onChanged();
       return this;
@@ -3100,19 +2588,14 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  checkByteStringIsUtf8(value);
+      
       deviceToken_ = value;
       onChanged();
       return this;
     }
 
     private int apnsEnabled_ ;
-    /**
-     * <code>optional int32 apnsEnabled = 17;</code>
-     */
-    public boolean hasApnsEnabled() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
     /**
      * <code>optional int32 apnsEnabled = 17;</code>
      */
@@ -3123,7 +2606,7 @@ public  final class PAppSession extends
      * <code>optional int32 apnsEnabled = 17;</code>
      */
     public Builder setApnsEnabled(int value) {
-      bitField0_ |= 0x00010000;
+      
       apnsEnabled_ = value;
       onChanged();
       return this;
@@ -3132,7 +2615,7 @@ public  final class PAppSession extends
      * <code>optional int32 apnsEnabled = 17;</code>
      */
     public Builder clearApnsEnabled() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      
       apnsEnabled_ = 0;
       onChanged();
       return this;
@@ -3142,21 +2625,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string latesAppVers = 18;</code>
      */
-    public boolean hasLatesAppVers() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    /**
-     * <code>optional string latesAppVers = 18;</code>
-     */
     public java.lang.String getLatesAppVers() {
       java.lang.Object ref = latesAppVers_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          latesAppVers_ = s;
-        }
+        latesAppVers_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3186,7 +2661,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00020000;
+  
       latesAppVers_ = value;
       onChanged();
       return this;
@@ -3195,7 +2670,7 @@ public  final class PAppSession extends
      * <code>optional string latesAppVers = 18;</code>
      */
     public Builder clearLatesAppVers() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      
       latesAppVers_ = getDefaultInstance().getLatesAppVers();
       onChanged();
       return this;
@@ -3208,7 +2683,8 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00020000;
+  checkByteStringIsUtf8(value);
+      
       latesAppVers_ = value;
       onChanged();
       return this;
@@ -3218,21 +2694,13 @@ public  final class PAppSession extends
     /**
      * <code>optional string localeIdentifier = 19;</code>
      */
-    public boolean hasLocaleIdentifier() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
-    }
-    /**
-     * <code>optional string localeIdentifier = 19;</code>
-     */
     public java.lang.String getLocaleIdentifier() {
       java.lang.Object ref = localeIdentifier_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          localeIdentifier_ = s;
-        }
+        localeIdentifier_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3262,7 +2730,7 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00040000;
+  
       localeIdentifier_ = value;
       onChanged();
       return this;
@@ -3271,7 +2739,7 @@ public  final class PAppSession extends
      * <code>optional string localeIdentifier = 19;</code>
      */
     public Builder clearLocaleIdentifier() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      
       localeIdentifier_ = getDefaultInstance().getLocaleIdentifier();
       onChanged();
       return this;
@@ -3284,19 +2752,14 @@ public  final class PAppSession extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00040000;
+  checkByteStringIsUtf8(value);
+      
       localeIdentifier_ = value;
       onChanged();
       return this;
     }
 
     private float latitude_ ;
-    /**
-     * <code>optional float latitude = 20;</code>
-     */
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
-    }
     /**
      * <code>optional float latitude = 20;</code>
      */
@@ -3307,7 +2770,7 @@ public  final class PAppSession extends
      * <code>optional float latitude = 20;</code>
      */
     public Builder setLatitude(float value) {
-      bitField0_ |= 0x00080000;
+      
       latitude_ = value;
       onChanged();
       return this;
@@ -3316,19 +2779,13 @@ public  final class PAppSession extends
      * <code>optional float latitude = 20;</code>
      */
     public Builder clearLatitude() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      
       latitude_ = 0F;
       onChanged();
       return this;
     }
 
     private float longitude_ ;
-    /**
-     * <code>optional float longitude = 21;</code>
-     */
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
-    }
     /**
      * <code>optional float longitude = 21;</code>
      */
@@ -3339,7 +2796,7 @@ public  final class PAppSession extends
      * <code>optional float longitude = 21;</code>
      */
     public Builder setLongitude(float value) {
-      bitField0_ |= 0x00100000;
+      
       longitude_ = value;
       onChanged();
       return this;
@@ -3348,19 +2805,13 @@ public  final class PAppSession extends
      * <code>optional float longitude = 21;</code>
      */
     public Builder clearLongitude() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      
       longitude_ = 0F;
       onChanged();
       return this;
     }
 
     private int cityId_ ;
-    /**
-     * <code>optional int32 cityId = 22;</code>
-     */
-    public boolean hasCityId() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
-    }
     /**
      * <code>optional int32 cityId = 22;</code>
      */
@@ -3371,7 +2822,7 @@ public  final class PAppSession extends
      * <code>optional int32 cityId = 22;</code>
      */
     public Builder setCityId(int value) {
-      bitField0_ |= 0x00200000;
+      
       cityId_ = value;
       onChanged();
       return this;
@@ -3380,19 +2831,13 @@ public  final class PAppSession extends
      * <code>optional int32 cityId = 22;</code>
      */
     public Builder clearCityId() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      
       cityId_ = 0;
       onChanged();
       return this;
     }
 
     private int userKind_ ;
-    /**
-     * <code>optional int32 userKind = 23;</code>
-     */
-    public boolean hasUserKind() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
-    }
     /**
      * <code>optional int32 userKind = 23;</code>
      */
@@ -3403,7 +2848,7 @@ public  final class PAppSession extends
      * <code>optional int32 userKind = 23;</code>
      */
     public Builder setUserKind(int value) {
-      bitField0_ |= 0x00400000;
+      
       userKind_ = value;
       onChanged();
       return this;
@@ -3412,19 +2857,13 @@ public  final class PAppSession extends
      * <code>optional int32 userKind = 23;</code>
      */
     public Builder clearUserKind() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      
       userKind_ = 0;
       onChanged();
       return this;
     }
 
     private int userDemo_ ;
-    /**
-     * <code>optional int32 userDemo = 24;</code>
-     */
-    public boolean hasUserDemo() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
-    }
     /**
      * <code>optional int32 userDemo = 24;</code>
      */
@@ -3435,7 +2874,7 @@ public  final class PAppSession extends
      * <code>optional int32 userDemo = 24;</code>
      */
     public Builder setUserDemo(int value) {
-      bitField0_ |= 0x00800000;
+      
       userDemo_ = value;
       onChanged();
       return this;
@@ -3444,19 +2883,19 @@ public  final class PAppSession extends
      * <code>optional int32 userDemo = 24;</code>
      */
     public Builder clearUserDemo() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      
       userDemo_ = 0;
       onChanged();
       return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -3473,7 +2912,7 @@ public  final class PAppSession extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PAppSession>
+  private static final com.google.protobuf.Parser<PAppSession>
       PARSER = new com.google.protobuf.AbstractParser<PAppSession>() {
     public PAppSession parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

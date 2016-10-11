@@ -34,7 +34,7 @@ static GPBFileDescriptor *PappResponseRoot_FileDescriptor(void) {
   if (!descriptor) {
     GPBDebugCheckRuntimeVersion();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@""
-                                                     syntax:GPBFileSyntaxProto2];
+                                                     syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
@@ -43,11 +43,11 @@ static GPBFileDescriptor *PappResponseRoot_FileDescriptor(void) {
 
 @implementation PAppResponse
 
-@dynamic hasMsg, msg;
-@dynamic hasSessionId, sessionId;
-@dynamic hasVersion, version;
-@dynamic hasCode, code;
-@dynamic hasTotal, total;
+@dynamic msg;
+@dynamic sessionId;
+@dynamic version;
+@dynamic code;
+@dynamic total;
 @dynamic dataArray, dataArray_Count;
 @dynamic errorsArray, errorsArray_Count;
 
@@ -101,7 +101,7 @@ typedef struct PAppResponse__storage_ {
         .number = PAppResponse_FieldNumber_Code,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(PAppResponse__storage_, code),
-        .flags = GPBFieldRequired,
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {

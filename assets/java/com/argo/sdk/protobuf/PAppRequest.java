@@ -22,13 +22,12 @@ public  final class PAppRequest extends
     nonce_ = "";
     userAgent_ = "";
     path_ = "";
-    param_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private PAppRequest(
       com.google.protobuf.CodedInputStream input,
@@ -36,8 +35,6 @@ public  final class PAppRequest extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -47,60 +44,63 @@ public  final class PAppRequest extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            authId_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            authId_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            sessionId_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sessionId_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             version_ = input.readInt32();
             break;
           }
           case 34: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000008;
-            sign_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sign_ = s;
             break;
           }
           case 42: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000010;
-            nonce_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nonce_ = s;
             break;
           }
           case 50: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000020;
-            userAgent_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userAgent_ = s;
             break;
           }
           case 58: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000040;
-            path_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            path_ = s;
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              param_ = new java.util.ArrayList<com.argo.sdk.protobuf.PAppRequestParam>();
-              mutable_bitField0_ |= 0x00000080;
+            com.argo.sdk.protobuf.PAppRequestParam.Builder subBuilder = null;
+            if (param_ != null) {
+              subBuilder = param_.toBuilder();
             }
-            param_.add(
-                input.readMessage(com.argo.sdk.protobuf.PAppRequestParam.PARSER, extensionRegistry));
+            param_ = input.readMessage(com.argo.sdk.protobuf.PAppRequestParam.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(param_);
+              param_ = subBuilder.buildPartial();
+            }
+
             break;
           }
         }
@@ -111,10 +111,6 @@ public  final class PAppRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-        param_ = java.util.Collections.unmodifiableList(param_);
-      }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -130,17 +126,10 @@ public  final class PAppRequest extends
             com.argo.sdk.protobuf.PAppRequest.class, com.argo.sdk.protobuf.PAppRequest.Builder.class);
   }
 
-  private int bitField0_;
   public static final int AUTHID_FIELD_NUMBER = 1;
   private volatile java.lang.Object authId_;
   /**
-   * <code>required string authId = 1;</code>
-   */
-  public boolean hasAuthId() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>required string authId = 1;</code>
+   * <code>optional string authId = 1;</code>
    */
   public java.lang.String getAuthId() {
     java.lang.Object ref = authId_;
@@ -150,14 +139,12 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        authId_ = s;
-      }
+      authId_ = s;
       return s;
     }
   }
   /**
-   * <code>required string authId = 1;</code>
+   * <code>optional string authId = 1;</code>
    */
   public com.google.protobuf.ByteString
       getAuthIdBytes() {
@@ -178,12 +165,6 @@ public  final class PAppRequest extends
   /**
    * <code>optional string sessionId = 2;</code>
    */
-  public boolean hasSessionId() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional string sessionId = 2;</code>
-   */
   public java.lang.String getSessionId() {
     java.lang.Object ref = sessionId_;
     if (ref instanceof java.lang.String) {
@@ -192,9 +173,7 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sessionId_ = s;
-      }
+      sessionId_ = s;
       return s;
     }
   }
@@ -220,24 +199,12 @@ public  final class PAppRequest extends
   /**
    * <code>optional int32 version = 3;</code>
    */
-  public boolean hasVersion() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
-  /**
-   * <code>optional int32 version = 3;</code>
-   */
   public int getVersion() {
     return version_;
   }
 
   public static final int SIGN_FIELD_NUMBER = 4;
   private volatile java.lang.Object sign_;
-  /**
-   * <code>optional string sign = 4;</code>
-   */
-  public boolean hasSign() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
   /**
    * <code>optional string sign = 4;</code>
    */
@@ -249,9 +216,7 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sign_ = s;
-      }
+      sign_ = s;
       return s;
     }
   }
@@ -277,12 +242,6 @@ public  final class PAppRequest extends
   /**
    * <code>optional string nonce = 5;</code>
    */
-  public boolean hasNonce() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
-  /**
-   * <code>optional string nonce = 5;</code>
-   */
   public java.lang.String getNonce() {
     java.lang.Object ref = nonce_;
     if (ref instanceof java.lang.String) {
@@ -291,9 +250,7 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        nonce_ = s;
-      }
+      nonce_ = s;
       return s;
     }
   }
@@ -319,12 +276,6 @@ public  final class PAppRequest extends
   /**
    * <code>optional string userAgent = 6;</code>
    */
-  public boolean hasUserAgent() {
-    return ((bitField0_ & 0x00000020) == 0x00000020);
-  }
-  /**
-   * <code>optional string userAgent = 6;</code>
-   */
   public java.lang.String getUserAgent() {
     java.lang.Object ref = userAgent_;
     if (ref instanceof java.lang.String) {
@@ -333,9 +284,7 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        userAgent_ = s;
-      }
+      userAgent_ = s;
       return s;
     }
   }
@@ -361,12 +310,6 @@ public  final class PAppRequest extends
   /**
    * <code>optional string path = 7;</code>
    */
-  public boolean hasPath() {
-    return ((bitField0_ & 0x00000040) == 0x00000040);
-  }
-  /**
-   * <code>optional string path = 7;</code>
-   */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -375,9 +318,7 @@ public  final class PAppRequest extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        path_ = s;
-      }
+      path_ = s;
       return s;
     }
   }
@@ -399,38 +340,24 @@ public  final class PAppRequest extends
   }
 
   public static final int PARAM_FIELD_NUMBER = 8;
-  private java.util.List<com.argo.sdk.protobuf.PAppRequestParam> param_;
+  private com.argo.sdk.protobuf.PAppRequestParam param_;
   /**
-   * <code>repeated .PAppRequestParam param = 8;</code>
+   * <code>optional .PAppRequestParam param = 8;</code>
    */
-  public java.util.List<com.argo.sdk.protobuf.PAppRequestParam> getParamList() {
-    return param_;
+  public boolean hasParam() {
+    return param_ != null;
   }
   /**
-   * <code>repeated .PAppRequestParam param = 8;</code>
+   * <code>optional .PAppRequestParam param = 8;</code>
    */
-  public java.util.List<? extends com.argo.sdk.protobuf.PAppRequestParamOrBuilder> 
-      getParamOrBuilderList() {
-    return param_;
+  public com.argo.sdk.protobuf.PAppRequestParam getParam() {
+    return param_ == null ? com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance() : param_;
   }
   /**
-   * <code>repeated .PAppRequestParam param = 8;</code>
+   * <code>optional .PAppRequestParam param = 8;</code>
    */
-  public int getParamCount() {
-    return param_.size();
-  }
-  /**
-   * <code>repeated .PAppRequestParam param = 8;</code>
-   */
-  public com.argo.sdk.protobuf.PAppRequestParam getParam(int index) {
-    return param_.get(index);
-  }
-  /**
-   * <code>repeated .PAppRequestParam param = 8;</code>
-   */
-  public com.argo.sdk.protobuf.PAppRequestParamOrBuilder getParamOrBuilder(
-      int index) {
-    return param_.get(index);
+  public com.argo.sdk.protobuf.PAppRequestParamOrBuilder getParamOrBuilder() {
+    return getParam();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -439,47 +366,36 @@ public  final class PAppRequest extends
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasAuthId()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
-    for (int i = 0; i < getParamCount(); i++) {
-      if (!getParam(i).isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-    }
     memoizedIsInitialized = 1;
     return true;
   }
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getAuthIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getSessionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (version_ != 0) {
       output.writeInt32(3, version_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getSignBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sign_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getNonceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nonce_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getUserAgentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userAgent_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getPathBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, path_);
     }
-    for (int i = 0; i < param_.size(); i++) {
-      output.writeMessage(8, param_.get(i));
+    if (param_ != null) {
+      output.writeMessage(8, getParam());
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -487,33 +403,32 @@ public  final class PAppRequest extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getAuthIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getSessionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (version_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, version_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getSignBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sign_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getNonceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nonce_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getUserAgentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userAgent_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getPathBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, path_);
     }
-    for (int i = 0; i < param_.size(); i++) {
+    if (param_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, param_.get(i));
+        .computeMessageSize(8, getParam());
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -530,44 +445,25 @@ public  final class PAppRequest extends
     com.argo.sdk.protobuf.PAppRequest other = (com.argo.sdk.protobuf.PAppRequest) obj;
 
     boolean result = true;
-    result = result && (hasAuthId() == other.hasAuthId());
-    if (hasAuthId()) {
-      result = result && getAuthId()
-          .equals(other.getAuthId());
+    result = result && getAuthId()
+        .equals(other.getAuthId());
+    result = result && getSessionId()
+        .equals(other.getSessionId());
+    result = result && (getVersion()
+        == other.getVersion());
+    result = result && getSign()
+        .equals(other.getSign());
+    result = result && getNonce()
+        .equals(other.getNonce());
+    result = result && getUserAgent()
+        .equals(other.getUserAgent());
+    result = result && getPath()
+        .equals(other.getPath());
+    result = result && (hasParam() == other.hasParam());
+    if (hasParam()) {
+      result = result && getParam()
+          .equals(other.getParam());
     }
-    result = result && (hasSessionId() == other.hasSessionId());
-    if (hasSessionId()) {
-      result = result && getSessionId()
-          .equals(other.getSessionId());
-    }
-    result = result && (hasVersion() == other.hasVersion());
-    if (hasVersion()) {
-      result = result && (getVersion()
-          == other.getVersion());
-    }
-    result = result && (hasSign() == other.hasSign());
-    if (hasSign()) {
-      result = result && getSign()
-          .equals(other.getSign());
-    }
-    result = result && (hasNonce() == other.hasNonce());
-    if (hasNonce()) {
-      result = result && getNonce()
-          .equals(other.getNonce());
-    }
-    result = result && (hasUserAgent() == other.hasUserAgent());
-    if (hasUserAgent()) {
-      result = result && getUserAgent()
-          .equals(other.getUserAgent());
-    }
-    result = result && (hasPath() == other.hasPath());
-    if (hasPath()) {
-      result = result && getPath()
-          .equals(other.getPath());
-    }
-    result = result && getParamList()
-        .equals(other.getParamList());
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -578,37 +474,23 @@ public  final class PAppRequest extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasAuthId()) {
-      hash = (37 * hash) + AUTHID_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthId().hashCode();
-    }
-    if (hasSessionId()) {
-      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-      hash = (53 * hash) + getSessionId().hashCode();
-    }
-    if (hasVersion()) {
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion();
-    }
-    if (hasSign()) {
-      hash = (37 * hash) + SIGN_FIELD_NUMBER;
-      hash = (53 * hash) + getSign().hashCode();
-    }
-    if (hasNonce()) {
-      hash = (37 * hash) + NONCE_FIELD_NUMBER;
-      hash = (53 * hash) + getNonce().hashCode();
-    }
-    if (hasUserAgent()) {
-      hash = (37 * hash) + USERAGENT_FIELD_NUMBER;
-      hash = (53 * hash) + getUserAgent().hashCode();
-    }
-    if (hasPath()) {
-      hash = (37 * hash) + PATH_FIELD_NUMBER;
-      hash = (53 * hash) + getPath().hashCode();
-    }
-    if (getParamCount() > 0) {
+    hash = (37 * hash) + AUTHID_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthId().hashCode();
+    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getSessionId().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion();
+    hash = (37 * hash) + SIGN_FIELD_NUMBER;
+    hash = (53 * hash) + getSign().hashCode();
+    hash = (37 * hash) + NONCE_FIELD_NUMBER;
+    hash = (53 * hash) + getNonce().hashCode();
+    hash = (37 * hash) + USERAGENT_FIELD_NUMBER;
+    hash = (53 * hash) + getUserAgent().hashCode();
+    hash = (37 * hash) + PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getPath().hashCode();
+    if (hasParam()) {
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
-      hash = (53 * hash) + getParamList().hashCode();
+      hash = (53 * hash) + getParam().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -724,30 +606,29 @@ public  final class PAppRequest extends
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getParamFieldBuilder();
       }
     }
     public Builder clear() {
       super.clear();
       authId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       sessionId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       version_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       sign_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       nonce_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       userAgent_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       path_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       if (paramBuilder_ == null) {
-        param_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        param_ = null;
       } else {
-        paramBuilder_.clear();
+        param_ = null;
+        paramBuilder_ = null;
       }
       return this;
     }
@@ -771,46 +652,18 @@ public  final class PAppRequest extends
 
     public com.argo.sdk.protobuf.PAppRequest buildPartial() {
       com.argo.sdk.protobuf.PAppRequest result = new com.argo.sdk.protobuf.PAppRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.authId_ = authId_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.sessionId_ = sessionId_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.version_ = version_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.sign_ = sign_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.nonce_ = nonce_;
-      if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-        to_bitField0_ |= 0x00000020;
-      }
       result.userAgent_ = userAgent_;
-      if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-        to_bitField0_ |= 0x00000040;
-      }
       result.path_ = path_;
       if (paramBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
-          param_ = java.util.Collections.unmodifiableList(param_);
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
         result.param_ = param_;
       } else {
         result.param_ = paramBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -852,79 +705,41 @@ public  final class PAppRequest extends
 
     public Builder mergeFrom(com.argo.sdk.protobuf.PAppRequest other) {
       if (other == com.argo.sdk.protobuf.PAppRequest.getDefaultInstance()) return this;
-      if (other.hasAuthId()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getAuthId().isEmpty()) {
         authId_ = other.authId_;
         onChanged();
       }
-      if (other.hasSessionId()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
         onChanged();
       }
-      if (other.hasVersion()) {
+      if (other.getVersion() != 0) {
         setVersion(other.getVersion());
       }
-      if (other.hasSign()) {
-        bitField0_ |= 0x00000008;
+      if (!other.getSign().isEmpty()) {
         sign_ = other.sign_;
         onChanged();
       }
-      if (other.hasNonce()) {
-        bitField0_ |= 0x00000010;
+      if (!other.getNonce().isEmpty()) {
         nonce_ = other.nonce_;
         onChanged();
       }
-      if (other.hasUserAgent()) {
-        bitField0_ |= 0x00000020;
+      if (!other.getUserAgent().isEmpty()) {
         userAgent_ = other.userAgent_;
         onChanged();
       }
-      if (other.hasPath()) {
-        bitField0_ |= 0x00000040;
+      if (!other.getPath().isEmpty()) {
         path_ = other.path_;
         onChanged();
       }
-      if (paramBuilder_ == null) {
-        if (!other.param_.isEmpty()) {
-          if (param_.isEmpty()) {
-            param_ = other.param_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-          } else {
-            ensureParamIsMutable();
-            param_.addAll(other.param_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.param_.isEmpty()) {
-          if (paramBuilder_.isEmpty()) {
-            paramBuilder_.dispose();
-            paramBuilder_ = null;
-            param_ = other.param_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-            paramBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getParamFieldBuilder() : null;
-          } else {
-            paramBuilder_.addAllMessages(other.param_);
-          }
-        }
+      if (other.hasParam()) {
+        mergeParam(other.getParam());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
     public final boolean isInitialized() {
-      if (!hasAuthId()) {
-        return false;
-      }
-      for (int i = 0; i < getParamCount(); i++) {
-        if (!getParam(i).isInitialized()) {
-          return false;
-        }
-      }
       return true;
     }
 
@@ -945,17 +760,10 @@ public  final class PAppRequest extends
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object authId_ = "";
     /**
-     * <code>required string authId = 1;</code>
-     */
-    public boolean hasAuthId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required string authId = 1;</code>
+     * <code>optional string authId = 1;</code>
      */
     public java.lang.String getAuthId() {
       java.lang.Object ref = authId_;
@@ -963,16 +771,14 @@ public  final class PAppRequest extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          authId_ = s;
-        }
+        authId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>required string authId = 1;</code>
+     * <code>optional string authId = 1;</code>
      */
     public com.google.protobuf.ByteString
         getAuthIdBytes() {
@@ -988,36 +794,37 @@ public  final class PAppRequest extends
       }
     }
     /**
-     * <code>required string authId = 1;</code>
+     * <code>optional string authId = 1;</code>
      */
     public Builder setAuthId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       authId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>required string authId = 1;</code>
+     * <code>optional string authId = 1;</code>
      */
     public Builder clearAuthId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       authId_ = getDefaultInstance().getAuthId();
       onChanged();
       return this;
     }
     /**
-     * <code>required string authId = 1;</code>
+     * <code>optional string authId = 1;</code>
      */
     public Builder setAuthIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       authId_ = value;
       onChanged();
       return this;
@@ -1027,21 +834,13 @@ public  final class PAppRequest extends
     /**
      * <code>optional string sessionId = 2;</code>
      */
-    public boolean hasSessionId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string sessionId = 2;</code>
-     */
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sessionId_ = s;
-        }
+        sessionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1071,7 +870,7 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       sessionId_ = value;
       onChanged();
       return this;
@@ -1080,7 +879,7 @@ public  final class PAppRequest extends
      * <code>optional string sessionId = 2;</code>
      */
     public Builder clearSessionId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       sessionId_ = getDefaultInstance().getSessionId();
       onChanged();
       return this;
@@ -1093,19 +892,14 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       sessionId_ = value;
       onChanged();
       return this;
     }
 
     private int version_ ;
-    /**
-     * <code>optional int32 version = 3;</code>
-     */
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
     /**
      * <code>optional int32 version = 3;</code>
      */
@@ -1116,7 +910,7 @@ public  final class PAppRequest extends
      * <code>optional int32 version = 3;</code>
      */
     public Builder setVersion(int value) {
-      bitField0_ |= 0x00000004;
+      
       version_ = value;
       onChanged();
       return this;
@@ -1125,7 +919,7 @@ public  final class PAppRequest extends
      * <code>optional int32 version = 3;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       version_ = 0;
       onChanged();
       return this;
@@ -1135,21 +929,13 @@ public  final class PAppRequest extends
     /**
      * <code>optional string sign = 4;</code>
      */
-    public boolean hasSign() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string sign = 4;</code>
-     */
     public java.lang.String getSign() {
       java.lang.Object ref = sign_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sign_ = s;
-        }
+        sign_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1179,7 +965,7 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
       sign_ = value;
       onChanged();
       return this;
@@ -1188,7 +974,7 @@ public  final class PAppRequest extends
      * <code>optional string sign = 4;</code>
      */
     public Builder clearSign() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       sign_ = getDefaultInstance().getSign();
       onChanged();
       return this;
@@ -1201,7 +987,8 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+      
       sign_ = value;
       onChanged();
       return this;
@@ -1211,21 +998,13 @@ public  final class PAppRequest extends
     /**
      * <code>optional string nonce = 5;</code>
      */
-    public boolean hasNonce() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional string nonce = 5;</code>
-     */
     public java.lang.String getNonce() {
       java.lang.Object ref = nonce_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          nonce_ = s;
-        }
+        nonce_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1255,7 +1034,7 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
       nonce_ = value;
       onChanged();
       return this;
@@ -1264,7 +1043,7 @@ public  final class PAppRequest extends
      * <code>optional string nonce = 5;</code>
      */
     public Builder clearNonce() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       nonce_ = getDefaultInstance().getNonce();
       onChanged();
       return this;
@@ -1277,7 +1056,8 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+      
       nonce_ = value;
       onChanged();
       return this;
@@ -1287,21 +1067,13 @@ public  final class PAppRequest extends
     /**
      * <code>optional string userAgent = 6;</code>
      */
-    public boolean hasUserAgent() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string userAgent = 6;</code>
-     */
     public java.lang.String getUserAgent() {
       java.lang.Object ref = userAgent_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          userAgent_ = s;
-        }
+        userAgent_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1331,7 +1103,7 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  
       userAgent_ = value;
       onChanged();
       return this;
@@ -1340,7 +1112,7 @@ public  final class PAppRequest extends
      * <code>optional string userAgent = 6;</code>
      */
     public Builder clearUserAgent() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       userAgent_ = getDefaultInstance().getUserAgent();
       onChanged();
       return this;
@@ -1353,7 +1125,8 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  checkByteStringIsUtf8(value);
+      
       userAgent_ = value;
       onChanged();
       return this;
@@ -1363,21 +1136,13 @@ public  final class PAppRequest extends
     /**
      * <code>optional string path = 7;</code>
      */
-    public boolean hasPath() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional string path = 7;</code>
-     */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          path_ = s;
-        }
+        path_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1407,7 +1172,7 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
       path_ = value;
       onChanged();
       return this;
@@ -1416,7 +1181,7 @@ public  final class PAppRequest extends
      * <code>optional string path = 7;</code>
      */
     public Builder clearPath() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       path_ = getDefaultInstance().getPath();
       onChanged();
       return this;
@@ -1429,245 +1194,123 @@ public  final class PAppRequest extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+      
       path_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.argo.sdk.protobuf.PAppRequestParam> param_ =
-      java.util.Collections.emptyList();
-    private void ensureParamIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        param_ = new java.util.ArrayList<com.argo.sdk.protobuf.PAppRequestParam>(param_);
-        bitField0_ |= 0x00000080;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.argo.sdk.protobuf.PAppRequestParam param_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
         com.argo.sdk.protobuf.PAppRequestParam, com.argo.sdk.protobuf.PAppRequestParam.Builder, com.argo.sdk.protobuf.PAppRequestParamOrBuilder> paramBuilder_;
+    /**
+     * <code>optional .PAppRequestParam param = 8;</code>
+     */
+    public boolean hasParam() {
+      return paramBuilder_ != null || param_ != null;
+    }
+    /**
+     * <code>optional .PAppRequestParam param = 8;</code>
+     */
+    public com.argo.sdk.protobuf.PAppRequestParam getParam() {
+      if (paramBuilder_ == null) {
+        return param_ == null ? com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance() : param_;
+      } else {
+        return paramBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>optional .PAppRequestParam param = 8;</code>
+     */
+    public Builder setParam(com.argo.sdk.protobuf.PAppRequestParam value) {
+      if (paramBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        param_ = value;
+        onChanged();
+      } else {
+        paramBuilder_.setMessage(value);
+      }
 
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public java.util.List<com.argo.sdk.protobuf.PAppRequestParam> getParamList() {
-      if (paramBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(param_);
-      } else {
-        return paramBuilder_.getMessageList();
-      }
+      return this;
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public int getParamCount() {
-      if (paramBuilder_ == null) {
-        return param_.size();
-      } else {
-        return paramBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public com.argo.sdk.protobuf.PAppRequestParam getParam(int index) {
-      if (paramBuilder_ == null) {
-        return param_.get(index);
-      } else {
-        return paramBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
     public Builder setParam(
-        int index, com.argo.sdk.protobuf.PAppRequestParam value) {
-      if (paramBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParamIsMutable();
-        param_.set(index, value);
-        onChanged();
-      } else {
-        paramBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public Builder setParam(
-        int index, com.argo.sdk.protobuf.PAppRequestParam.Builder builderForValue) {
-      if (paramBuilder_ == null) {
-        ensureParamIsMutable();
-        param_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        paramBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public Builder addParam(com.argo.sdk.protobuf.PAppRequestParam value) {
-      if (paramBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParamIsMutable();
-        param_.add(value);
-        onChanged();
-      } else {
-        paramBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public Builder addParam(
-        int index, com.argo.sdk.protobuf.PAppRequestParam value) {
-      if (paramBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureParamIsMutable();
-        param_.add(index, value);
-        onChanged();
-      } else {
-        paramBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public Builder addParam(
         com.argo.sdk.protobuf.PAppRequestParam.Builder builderForValue) {
       if (paramBuilder_ == null) {
-        ensureParamIsMutable();
-        param_.add(builderForValue.build());
+        param_ = builderForValue.build();
         onChanged();
       } else {
-        paramBuilder_.addMessage(builderForValue.build());
+        paramBuilder_.setMessage(builderForValue.build());
       }
+
       return this;
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
-    public Builder addParam(
-        int index, com.argo.sdk.protobuf.PAppRequestParam.Builder builderForValue) {
+    public Builder mergeParam(com.argo.sdk.protobuf.PAppRequestParam value) {
       if (paramBuilder_ == null) {
-        ensureParamIsMutable();
-        param_.add(index, builderForValue.build());
+        if (param_ != null) {
+          param_ =
+            com.argo.sdk.protobuf.PAppRequestParam.newBuilder(param_).mergeFrom(value).buildPartial();
+        } else {
+          param_ = value;
+        }
         onChanged();
       } else {
-        paramBuilder_.addMessage(index, builderForValue.build());
+        paramBuilder_.mergeFrom(value);
       }
+
       return this;
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public Builder addAllParam(
-        java.lang.Iterable<? extends com.argo.sdk.protobuf.PAppRequestParam> values) {
-      if (paramBuilder_ == null) {
-        ensureParamIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, param_);
-        onChanged();
-      } else {
-        paramBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
     public Builder clearParam() {
       if (paramBuilder_ == null) {
-        param_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        param_ = null;
         onChanged();
       } else {
-        paramBuilder_.clear();
+        param_ = null;
+        paramBuilder_ = null;
       }
+
       return this;
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
-    public Builder removeParam(int index) {
-      if (paramBuilder_ == null) {
-        ensureParamIsMutable();
-        param_.remove(index);
-        onChanged();
-      } else {
-        paramBuilder_.remove(index);
-      }
-      return this;
+    public com.argo.sdk.protobuf.PAppRequestParam.Builder getParamBuilder() {
+      
+      onChanged();
+      return getParamFieldBuilder().getBuilder();
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
-    public com.argo.sdk.protobuf.PAppRequestParam.Builder getParamBuilder(
-        int index) {
-      return getParamFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public com.argo.sdk.protobuf.PAppRequestParamOrBuilder getParamOrBuilder(
-        int index) {
-      if (paramBuilder_ == null) {
-        return param_.get(index);  } else {
-        return paramBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public java.util.List<? extends com.argo.sdk.protobuf.PAppRequestParamOrBuilder> 
-         getParamOrBuilderList() {
+    public com.argo.sdk.protobuf.PAppRequestParamOrBuilder getParamOrBuilder() {
       if (paramBuilder_ != null) {
-        return paramBuilder_.getMessageOrBuilderList();
+        return paramBuilder_.getMessageOrBuilder();
       } else {
-        return java.util.Collections.unmodifiableList(param_);
+        return param_ == null ?
+            com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance() : param_;
       }
     }
     /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
+     * <code>optional .PAppRequestParam param = 8;</code>
      */
-    public com.argo.sdk.protobuf.PAppRequestParam.Builder addParamBuilder() {
-      return getParamFieldBuilder().addBuilder(
-          com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public com.argo.sdk.protobuf.PAppRequestParam.Builder addParamBuilder(
-        int index) {
-      return getParamFieldBuilder().addBuilder(
-          index, com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .PAppRequestParam param = 8;</code>
-     */
-    public java.util.List<com.argo.sdk.protobuf.PAppRequestParam.Builder> 
-         getParamBuilderList() {
-      return getParamFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilderV3<
         com.argo.sdk.protobuf.PAppRequestParam, com.argo.sdk.protobuf.PAppRequestParam.Builder, com.argo.sdk.protobuf.PAppRequestParamOrBuilder> 
         getParamFieldBuilder() {
       if (paramBuilder_ == null) {
-        paramBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        paramBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.argo.sdk.protobuf.PAppRequestParam, com.argo.sdk.protobuf.PAppRequestParam.Builder, com.argo.sdk.protobuf.PAppRequestParamOrBuilder>(
-                param_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParam(),
                 getParentForChildren(),
                 isClean());
         param_ = null;
@@ -1676,12 +1319,12 @@ public  final class PAppRequest extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1698,7 +1341,7 @@ public  final class PAppRequest extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PAppRequest>
+  private static final com.google.protobuf.Parser<PAppRequest>
       PARSER = new com.google.protobuf.AbstractParser<PAppRequest>() {
     public PAppRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

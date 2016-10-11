@@ -27,7 +27,7 @@ public  final class PAppRequestParam extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private PAppRequestParam(
       com.google.protobuf.CodedInputStream input,
@@ -35,8 +35,6 @@ public  final class PAppRequestParam extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -46,46 +44,45 @@ public  final class PAppRequestParam extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            name_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           case 16: {
-            bitField0_ |= 0x00000002;
+
             intValue_ = input.readInt32();
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            strValue_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            strValue_ = s;
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             longValue_ = input.readInt64();
             break;
           }
           case 45: {
-            bitField0_ |= 0x00000010;
+
             floatValue_ = input.readFloat();
             break;
           }
           case 48: {
-            bitField0_ |= 0x00000020;
+
             boolValue_ = input.readBool();
             break;
           }
           case 58: {
-            bitField0_ |= 0x00000040;
+
             bytesValue_ = input.readBytes();
             break;
           }
@@ -97,7 +94,6 @@ public  final class PAppRequestParam extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -113,17 +109,10 @@ public  final class PAppRequestParam extends
             com.argo.sdk.protobuf.PAppRequestParam.class, com.argo.sdk.protobuf.PAppRequestParam.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
-   * <code>required string name = 1;</code>
-   */
-  public boolean hasName() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>required string name = 1;</code>
+   * <code>optional string name = 1;</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -133,14 +122,12 @@ public  final class PAppRequestParam extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        name_ = s;
-      }
+      name_ = s;
       return s;
     }
   }
   /**
-   * <code>required string name = 1;</code>
+   * <code>optional string name = 1;</code>
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -161,24 +148,12 @@ public  final class PAppRequestParam extends
   /**
    * <code>optional int32 intValue = 2;</code>
    */
-  public boolean hasIntValue() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional int32 intValue = 2;</code>
-   */
   public int getIntValue() {
     return intValue_;
   }
 
   public static final int STRVALUE_FIELD_NUMBER = 3;
   private volatile java.lang.Object strValue_;
-  /**
-   * <code>optional string strValue = 3;</code>
-   */
-  public boolean hasStrValue() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
   /**
    * <code>optional string strValue = 3;</code>
    */
@@ -190,9 +165,7 @@ public  final class PAppRequestParam extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        strValue_ = s;
-      }
+      strValue_ = s;
       return s;
     }
   }
@@ -218,24 +191,12 @@ public  final class PAppRequestParam extends
   /**
    * <code>optional int64 longValue = 4;</code>
    */
-  public boolean hasLongValue() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
-  /**
-   * <code>optional int64 longValue = 4;</code>
-   */
   public long getLongValue() {
     return longValue_;
   }
 
   public static final int FLOATVALUE_FIELD_NUMBER = 5;
   private float floatValue_;
-  /**
-   * <code>optional float floatValue = 5;</code>
-   */
-  public boolean hasFloatValue() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
   /**
    * <code>optional float floatValue = 5;</code>
    */
@@ -248,24 +209,12 @@ public  final class PAppRequestParam extends
   /**
    * <code>optional bool boolValue = 6;</code>
    */
-  public boolean hasBoolValue() {
-    return ((bitField0_ & 0x00000020) == 0x00000020);
-  }
-  /**
-   * <code>optional bool boolValue = 6;</code>
-   */
   public boolean getBoolValue() {
     return boolValue_;
   }
 
   public static final int BYTESVALUE_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString bytesValue_;
-  /**
-   * <code>optional bytes bytesValue = 7;</code>
-   */
-  public boolean hasBytesValue() {
-    return ((bitField0_ & 0x00000040) == 0x00000040);
-  }
   /**
    * <code>optional bytes bytesValue = 7;</code>
    */
@@ -279,38 +228,33 @@ public  final class PAppRequestParam extends
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasName()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (intValue_ != 0) {
       output.writeInt32(2, intValue_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getStrValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, strValue_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (longValue_ != 0L) {
       output.writeInt64(4, longValue_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (floatValue_ != 0F) {
       output.writeFloat(5, floatValue_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (boolValue_ != false) {
       output.writeBool(6, boolValue_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!bytesValue_.isEmpty()) {
       output.writeBytes(7, bytesValue_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -318,33 +262,32 @@ public  final class PAppRequestParam extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (intValue_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, intValue_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getStrValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, strValue_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (longValue_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, longValue_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (floatValue_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, floatValue_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (boolValue_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, boolValue_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!bytesValue_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(7, bytesValue_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -361,44 +304,22 @@ public  final class PAppRequestParam extends
     com.argo.sdk.protobuf.PAppRequestParam other = (com.argo.sdk.protobuf.PAppRequestParam) obj;
 
     boolean result = true;
-    result = result && (hasName() == other.hasName());
-    if (hasName()) {
-      result = result && getName()
-          .equals(other.getName());
-    }
-    result = result && (hasIntValue() == other.hasIntValue());
-    if (hasIntValue()) {
-      result = result && (getIntValue()
-          == other.getIntValue());
-    }
-    result = result && (hasStrValue() == other.hasStrValue());
-    if (hasStrValue()) {
-      result = result && getStrValue()
-          .equals(other.getStrValue());
-    }
-    result = result && (hasLongValue() == other.hasLongValue());
-    if (hasLongValue()) {
-      result = result && (getLongValue()
-          == other.getLongValue());
-    }
-    result = result && (hasFloatValue() == other.hasFloatValue());
-    if (hasFloatValue()) {
-      result = result && (
-          java.lang.Float.floatToIntBits(getFloatValue())
-          == java.lang.Float.floatToIntBits(
-              other.getFloatValue()));
-    }
-    result = result && (hasBoolValue() == other.hasBoolValue());
-    if (hasBoolValue()) {
-      result = result && (getBoolValue()
-          == other.getBoolValue());
-    }
-    result = result && (hasBytesValue() == other.hasBytesValue());
-    if (hasBytesValue()) {
-      result = result && getBytesValue()
-          .equals(other.getBytesValue());
-    }
-    result = result && unknownFields.equals(other.unknownFields);
+    result = result && getName()
+        .equals(other.getName());
+    result = result && (getIntValue()
+        == other.getIntValue());
+    result = result && getStrValue()
+        .equals(other.getStrValue());
+    result = result && (getLongValue()
+        == other.getLongValue());
+    result = result && (
+        java.lang.Float.floatToIntBits(getFloatValue())
+        == java.lang.Float.floatToIntBits(
+            other.getFloatValue()));
+    result = result && (getBoolValue()
+        == other.getBoolValue());
+    result = result && getBytesValue()
+        .equals(other.getBytesValue());
     return result;
   }
 
@@ -409,37 +330,23 @@ public  final class PAppRequestParam extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasName()) {
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-    }
-    if (hasIntValue()) {
-      hash = (37 * hash) + INTVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getIntValue();
-    }
-    if (hasStrValue()) {
-      hash = (37 * hash) + STRVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getStrValue().hashCode();
-    }
-    if (hasLongValue()) {
-      hash = (37 * hash) + LONGVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLongValue());
-    }
-    if (hasFloatValue()) {
-      hash = (37 * hash) + FLOATVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getFloatValue());
-    }
-    if (hasBoolValue()) {
-      hash = (37 * hash) + BOOLVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBoolValue());
-    }
-    if (hasBytesValue()) {
-      hash = (37 * hash) + BYTESVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getBytesValue().hashCode();
-    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + INTVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getIntValue();
+    hash = (37 * hash) + STRVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getStrValue().hashCode();
+    hash = (37 * hash) + LONGVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getLongValue());
+    hash = (37 * hash) + FLOATVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getFloatValue());
+    hash = (37 * hash) + BOOLVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBoolValue());
+    hash = (37 * hash) + BYTESVALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getBytesValue().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -559,19 +466,19 @@ public  final class PAppRequestParam extends
     public Builder clear() {
       super.clear();
       name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       intValue_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       strValue_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       longValue_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       floatValue_ = 0F;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       boolValue_ = false;
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       bytesValue_ = com.google.protobuf.ByteString.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       return this;
     }
 
@@ -594,37 +501,13 @@ public  final class PAppRequestParam extends
 
     public com.argo.sdk.protobuf.PAppRequestParam buildPartial() {
       com.argo.sdk.protobuf.PAppRequestParam result = new com.argo.sdk.protobuf.PAppRequestParam(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.name_ = name_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.intValue_ = intValue_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.strValue_ = strValue_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.longValue_ = longValue_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.floatValue_ = floatValue_;
-      if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-        to_bitField0_ |= 0x00000020;
-      }
       result.boolValue_ = boolValue_;
-      if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-        to_bitField0_ |= 0x00000040;
-      }
       result.bytesValue_ = bytesValue_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -666,40 +549,34 @@ public  final class PAppRequestParam extends
 
     public Builder mergeFrom(com.argo.sdk.protobuf.PAppRequestParam other) {
       if (other == com.argo.sdk.protobuf.PAppRequestParam.getDefaultInstance()) return this;
-      if (other.hasName()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.hasIntValue()) {
+      if (other.getIntValue() != 0) {
         setIntValue(other.getIntValue());
       }
-      if (other.hasStrValue()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getStrValue().isEmpty()) {
         strValue_ = other.strValue_;
         onChanged();
       }
-      if (other.hasLongValue()) {
+      if (other.getLongValue() != 0L) {
         setLongValue(other.getLongValue());
       }
-      if (other.hasFloatValue()) {
+      if (other.getFloatValue() != 0F) {
         setFloatValue(other.getFloatValue());
       }
-      if (other.hasBoolValue()) {
+      if (other.getBoolValue() != false) {
         setBoolValue(other.getBoolValue());
       }
-      if (other.hasBytesValue()) {
+      if (other.getBytesValue() != com.google.protobuf.ByteString.EMPTY) {
         setBytesValue(other.getBytesValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
     public final boolean isInitialized() {
-      if (!hasName()) {
-        return false;
-      }
       return true;
     }
 
@@ -720,17 +597,10 @@ public  final class PAppRequestParam extends
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>required string name = 1;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -738,16 +608,14 @@ public  final class PAppRequestParam extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -763,48 +631,43 @@ public  final class PAppRequestParam extends
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       name_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
     }
 
     private int intValue_ ;
-    /**
-     * <code>optional int32 intValue = 2;</code>
-     */
-    public boolean hasIntValue() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
     /**
      * <code>optional int32 intValue = 2;</code>
      */
@@ -815,7 +678,7 @@ public  final class PAppRequestParam extends
      * <code>optional int32 intValue = 2;</code>
      */
     public Builder setIntValue(int value) {
-      bitField0_ |= 0x00000002;
+      
       intValue_ = value;
       onChanged();
       return this;
@@ -824,7 +687,7 @@ public  final class PAppRequestParam extends
      * <code>optional int32 intValue = 2;</code>
      */
     public Builder clearIntValue() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       intValue_ = 0;
       onChanged();
       return this;
@@ -834,21 +697,13 @@ public  final class PAppRequestParam extends
     /**
      * <code>optional string strValue = 3;</code>
      */
-    public boolean hasStrValue() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string strValue = 3;</code>
-     */
     public java.lang.String getStrValue() {
       java.lang.Object ref = strValue_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          strValue_ = s;
-        }
+        strValue_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -878,7 +733,7 @@ public  final class PAppRequestParam extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       strValue_ = value;
       onChanged();
       return this;
@@ -887,7 +742,7 @@ public  final class PAppRequestParam extends
      * <code>optional string strValue = 3;</code>
      */
     public Builder clearStrValue() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       strValue_ = getDefaultInstance().getStrValue();
       onChanged();
       return this;
@@ -900,19 +755,14 @@ public  final class PAppRequestParam extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       strValue_ = value;
       onChanged();
       return this;
     }
 
     private long longValue_ ;
-    /**
-     * <code>optional int64 longValue = 4;</code>
-     */
-    public boolean hasLongValue() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
     /**
      * <code>optional int64 longValue = 4;</code>
      */
@@ -923,7 +773,7 @@ public  final class PAppRequestParam extends
      * <code>optional int64 longValue = 4;</code>
      */
     public Builder setLongValue(long value) {
-      bitField0_ |= 0x00000008;
+      
       longValue_ = value;
       onChanged();
       return this;
@@ -932,19 +782,13 @@ public  final class PAppRequestParam extends
      * <code>optional int64 longValue = 4;</code>
      */
     public Builder clearLongValue() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       longValue_ = 0L;
       onChanged();
       return this;
     }
 
     private float floatValue_ ;
-    /**
-     * <code>optional float floatValue = 5;</code>
-     */
-    public boolean hasFloatValue() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
     /**
      * <code>optional float floatValue = 5;</code>
      */
@@ -955,7 +799,7 @@ public  final class PAppRequestParam extends
      * <code>optional float floatValue = 5;</code>
      */
     public Builder setFloatValue(float value) {
-      bitField0_ |= 0x00000010;
+      
       floatValue_ = value;
       onChanged();
       return this;
@@ -964,19 +808,13 @@ public  final class PAppRequestParam extends
      * <code>optional float floatValue = 5;</code>
      */
     public Builder clearFloatValue() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       floatValue_ = 0F;
       onChanged();
       return this;
     }
 
     private boolean boolValue_ ;
-    /**
-     * <code>optional bool boolValue = 6;</code>
-     */
-    public boolean hasBoolValue() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
     /**
      * <code>optional bool boolValue = 6;</code>
      */
@@ -987,7 +825,7 @@ public  final class PAppRequestParam extends
      * <code>optional bool boolValue = 6;</code>
      */
     public Builder setBoolValue(boolean value) {
-      bitField0_ |= 0x00000020;
+      
       boolValue_ = value;
       onChanged();
       return this;
@@ -996,19 +834,13 @@ public  final class PAppRequestParam extends
      * <code>optional bool boolValue = 6;</code>
      */
     public Builder clearBoolValue() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       boolValue_ = false;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.ByteString bytesValue_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     * <code>optional bytes bytesValue = 7;</code>
-     */
-    public boolean hasBytesValue() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
     /**
      * <code>optional bytes bytesValue = 7;</code>
      */
@@ -1022,7 +854,7 @@ public  final class PAppRequestParam extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
       bytesValue_ = value;
       onChanged();
       return this;
@@ -1031,19 +863,19 @@ public  final class PAppRequestParam extends
      * <code>optional bytes bytesValue = 7;</code>
      */
     public Builder clearBytesValue() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       bytesValue_ = getDefaultInstance().getBytesValue();
       onChanged();
       return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1060,7 +892,7 @@ public  final class PAppRequestParam extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PAppRequestParam>
+  private static final com.google.protobuf.Parser<PAppRequestParam>
       PARSER = new com.google.protobuf.AbstractParser<PAppRequestParam>() {
     public PAppRequestParam parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

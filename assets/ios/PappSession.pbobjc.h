@@ -73,94 +73,53 @@ typedef GPB_ENUM(PAppSession_FieldNumber) {
 @interface PAppSession : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *sessionId;
-/** Test to see if @c sessionId has been set. */
-@property(nonatomic, readwrite) BOOL hasSessionId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *realName;
-/** Test to see if @c realName has been set. */
-@property(nonatomic, readwrite) BOOL hasRealName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userName;
-/** Test to see if @c userName has been set. */
-@property(nonatomic, readwrite) BOOL hasUserName;
 
 @property(nonatomic, readwrite) int64_t userId;
 
-@property(nonatomic, readwrite) BOOL hasUserId;
 @property(nonatomic, readwrite, copy, null_resettable) NSString *secret;
-/** Test to see if @c secret has been set. */
-@property(nonatomic, readwrite) BOOL hasSecret;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *signinDate;
-/** Test to see if @c signinDate has been set. */
-@property(nonatomic, readwrite) BOOL hasSigninDate;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *profileImageURL;
-/** Test to see if @c profileImageURL has been set. */
-@property(nonatomic, readwrite) BOOL hasProfileImageURL;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *appName;
-/** Test to see if @c appName has been set. */
-@property(nonatomic, readwrite) BOOL hasAppName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceName;
-/** Test to see if @c deviceName has been set. */
-@property(nonatomic, readwrite) BOOL hasDeviceName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceScreenSize;
-/** Test to see if @c deviceScreenSize has been set. */
-@property(nonatomic, readwrite) BOOL hasDeviceScreenSize;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *osName;
-/** Test to see if @c osName has been set. */
-@property(nonatomic, readwrite) BOOL hasOsName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *osVersion;
-/** Test to see if @c osVersion has been set. */
-@property(nonatomic, readwrite) BOOL hasOsVersion;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *packageVersion;
-/** Test to see if @c packageVersion has been set. */
-@property(nonatomic, readwrite) BOOL hasPackageVersion;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *packageName;
-/** Test to see if @c packageName has been set. */
-@property(nonatomic, readwrite) BOOL hasPackageName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
-/** Test to see if @c deviceId has been set. */
-@property(nonatomic, readwrite) BOOL hasDeviceId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceToken;
-/** Test to see if @c deviceToken has been set. */
-@property(nonatomic, readwrite) BOOL hasDeviceToken;
 
 @property(nonatomic, readwrite) int32_t apnsEnabled;
 
-@property(nonatomic, readwrite) BOOL hasApnsEnabled;
 @property(nonatomic, readwrite, copy, null_resettable) NSString *latesAppVers;
-/** Test to see if @c latesAppVers has been set. */
-@property(nonatomic, readwrite) BOOL hasLatesAppVers;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *localeIdentifier;
-/** Test to see if @c localeIdentifier has been set. */
-@property(nonatomic, readwrite) BOOL hasLocaleIdentifier;
 
 @property(nonatomic, readwrite) float latitude;
 
-@property(nonatomic, readwrite) BOOL hasLatitude;
 @property(nonatomic, readwrite) float longitude;
 
-@property(nonatomic, readwrite) BOOL hasLongitude;
 @property(nonatomic, readwrite) int32_t cityId;
 
-@property(nonatomic, readwrite) BOOL hasCityId;
 @property(nonatomic, readwrite) int32_t userKind;
 
-@property(nonatomic, readwrite) BOOL hasUserKind;
 @property(nonatomic, readwrite) int32_t userDemo;
 
-@property(nonatomic, readwrite) BOOL hasUserDemo;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,33 +1,33 @@
-syntax = "proto2";
+syntax = "proto3";
 option java_package = "com.argo.sdk.protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "PAppSessionProto";
 
 message PAppSession{
-    optional string sessionId = 1;
-    optional string realName = 2;
-    optional string userName = 3;
-    optional int64 userId = 4;
-    optional string secret = 5;
-    optional string signinDate = 6;
-    optional string profileImageUrl = 7;
+    string sessionId = 1;
+    string realName = 2;
+    string userName = 3;
+    int64 userId = 4;
+    string secret = 5;
+    string signinDate = 6;
+    string profileImageUrl = 7;
 
-    optional string appName = 8;
-    optional string deviceName = 9;
-    optional string deviceScreenSize = 10;
-    optional string osName = 11;
-    optional string osVersion = 12;
-    optional string packageVersion = 13;
-    optional string packageName = 14;
-    optional string deviceId = 15;
-    optional string deviceToken = 16;
+    string appName = 8;
+    string deviceName = 9;
+    string deviceScreenSize = 10;
+    string osName = 11;
+    string osVersion = 12;
+    string packageVersion = 13;
+    string packageName = 14;
+    string deviceId = 15;
+    string deviceToken = 16;
 
-    optional int32 apnsEnabled = 17;
-    optional string latesAppVers = 18;
-    optional string localeIdentifier = 19;
-    optional float latitude = 20;
-    optional float longitude = 21;
-    optional int32 cityId = 22;
-    optional int32 userKind = 23;
-    optional int32 userDemo = 24;
+    int32 apnsEnabled = 17;
+    string latesAppVers = 18;
+    string localeIdentifier = 19;
+    float latitude = 20;
+    float longitude = 21;
+    int32 cityId = 22;
+    int32 userKind = 23;
+    int32 userDemo = 24;
 }

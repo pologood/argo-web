@@ -56,22 +56,15 @@ typedef GPB_ENUM(PAppResponse_FieldNumber) {
 @interface PAppResponse : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *msg;
-/** Test to see if @c msg has been set. */
-@property(nonatomic, readwrite) BOOL hasMsg;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *sessionId;
-/** Test to see if @c sessionId has been set. */
-@property(nonatomic, readwrite) BOOL hasSessionId;
 
 @property(nonatomic, readwrite) int32_t version;
 
-@property(nonatomic, readwrite) BOOL hasVersion;
 @property(nonatomic, readwrite) int32_t code;
 
-@property(nonatomic, readwrite) BOOL hasCode;
 @property(nonatomic, readwrite) int32_t total;
 
-@property(nonatomic, readwrite) BOOL hasTotal;
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSData*> *dataArray;
 /** The number of items in @c dataArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger dataArray_Count;

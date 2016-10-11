@@ -1,14 +1,14 @@
-syntax = "proto2";
+syntax = "proto3";
 option java_package = "com.argo.web.protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "PAppResponseProto";
 
 message PAppResponse {
-    optional string msg = 1;
-    optional string sessionId = 2;
-    optional int32 version = 3;
-    required int32 code = 4;
-    optional int32 total = 5;
+    string msg = 1;
+    string sessionId = 2;
+    int32 version = 3;
+    int32 code = 4;
+    int32 total = 5;
     repeated bytes data = 6;
     repeated string errors = 7;
 }

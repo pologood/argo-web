@@ -27,7 +27,7 @@ public  final class PAppResponse extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private PAppResponse(
       com.google.protobuf.CodedInputStream input,
@@ -35,8 +35,6 @@ public  final class PAppResponse extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -46,36 +44,35 @@ public  final class PAppResponse extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            msg_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            msg_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            sessionId_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sessionId_ = s;
             break;
           }
           case 24: {
-            bitField0_ |= 0x00000004;
+
             version_ = input.readInt32();
             break;
           }
           case 32: {
-            bitField0_ |= 0x00000008;
+
             code_ = input.readInt32();
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             total_ = input.readInt32();
             break;
           }
@@ -88,12 +85,12 @@ public  final class PAppResponse extends
             break;
           }
           case 58: {
-            com.google.protobuf.ByteString bs = input.readBytes();
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
               errors_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000040;
             }
-            errors_.add(bs);
+            errors_.add(s);
             break;
           }
         }
@@ -110,7 +107,6 @@ public  final class PAppResponse extends
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         errors_ = errors_.getUnmodifiableView();
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -132,12 +128,6 @@ public  final class PAppResponse extends
   /**
    * <code>optional string msg = 1;</code>
    */
-  public boolean hasMsg() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>optional string msg = 1;</code>
-   */
   public java.lang.String getMsg() {
     java.lang.Object ref = msg_;
     if (ref instanceof java.lang.String) {
@@ -146,9 +136,7 @@ public  final class PAppResponse extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        msg_ = s;
-      }
+      msg_ = s;
       return s;
     }
   }
@@ -174,12 +162,6 @@ public  final class PAppResponse extends
   /**
    * <code>optional string sessionId = 2;</code>
    */
-  public boolean hasSessionId() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional string sessionId = 2;</code>
-   */
   public java.lang.String getSessionId() {
     java.lang.Object ref = sessionId_;
     if (ref instanceof java.lang.String) {
@@ -188,9 +170,7 @@ public  final class PAppResponse extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        sessionId_ = s;
-      }
+      sessionId_ = s;
       return s;
     }
   }
@@ -216,12 +196,6 @@ public  final class PAppResponse extends
   /**
    * <code>optional int32 version = 3;</code>
    */
-  public boolean hasVersion() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
-  /**
-   * <code>optional int32 version = 3;</code>
-   */
   public int getVersion() {
     return version_;
   }
@@ -229,13 +203,7 @@ public  final class PAppResponse extends
   public static final int CODE_FIELD_NUMBER = 4;
   private int code_;
   /**
-   * <code>required int32 code = 4;</code>
-   */
-  public boolean hasCode() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
-  /**
-   * <code>required int32 code = 4;</code>
+   * <code>optional int32 code = 4;</code>
    */
   public int getCode() {
     return code_;
@@ -243,12 +211,6 @@ public  final class PAppResponse extends
 
   public static final int TOTAL_FIELD_NUMBER = 5;
   private int total_;
-  /**
-   * <code>optional int32 total = 5;</code>
-   */
-  public boolean hasTotal() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
   /**
    * <code>optional int32 total = 5;</code>
    */
@@ -313,29 +275,25 @@ public  final class PAppResponse extends
     if (isInitialized == 1) return true;
     if (isInitialized == 0) return false;
 
-    if (!hasCode()) {
-      memoizedIsInitialized = 0;
-      return false;
-    }
     memoizedIsInitialized = 1;
     return true;
   }
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getMsgBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getSessionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (version_ != 0) {
       output.writeInt32(3, version_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (code_ != 0) {
       output.writeInt32(4, code_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (total_ != 0) {
       output.writeInt32(5, total_);
     }
     for (int i = 0; i < data_.size(); i++) {
@@ -344,7 +302,6 @@ public  final class PAppResponse extends
     for (int i = 0; i < errors_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, errors_.getRaw(i));
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -352,21 +309,21 @@ public  final class PAppResponse extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getMsgBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getSessionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (version_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, version_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (code_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, code_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (total_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, total_);
     }
@@ -387,7 +344,6 @@ public  final class PAppResponse extends
       size += dataSize;
       size += 1 * getErrorsList().size();
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -404,36 +360,20 @@ public  final class PAppResponse extends
     com.argo.web.protobuf.PAppResponse other = (com.argo.web.protobuf.PAppResponse) obj;
 
     boolean result = true;
-    result = result && (hasMsg() == other.hasMsg());
-    if (hasMsg()) {
-      result = result && getMsg()
-          .equals(other.getMsg());
-    }
-    result = result && (hasSessionId() == other.hasSessionId());
-    if (hasSessionId()) {
-      result = result && getSessionId()
-          .equals(other.getSessionId());
-    }
-    result = result && (hasVersion() == other.hasVersion());
-    if (hasVersion()) {
-      result = result && (getVersion()
-          == other.getVersion());
-    }
-    result = result && (hasCode() == other.hasCode());
-    if (hasCode()) {
-      result = result && (getCode()
-          == other.getCode());
-    }
-    result = result && (hasTotal() == other.hasTotal());
-    if (hasTotal()) {
-      result = result && (getTotal()
-          == other.getTotal());
-    }
+    result = result && getMsg()
+        .equals(other.getMsg());
+    result = result && getSessionId()
+        .equals(other.getSessionId());
+    result = result && (getVersion()
+        == other.getVersion());
+    result = result && (getCode()
+        == other.getCode());
+    result = result && (getTotal()
+        == other.getTotal());
     result = result && getDataList()
         .equals(other.getDataList());
     result = result && getErrorsList()
         .equals(other.getErrorsList());
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -444,26 +384,16 @@ public  final class PAppResponse extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasMsg()) {
-      hash = (37 * hash) + MSG_FIELD_NUMBER;
-      hash = (53 * hash) + getMsg().hashCode();
-    }
-    if (hasSessionId()) {
-      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-      hash = (53 * hash) + getSessionId().hashCode();
-    }
-    if (hasVersion()) {
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion();
-    }
-    if (hasCode()) {
-      hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCode();
-    }
-    if (hasTotal()) {
-      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
-      hash = (53 * hash) + getTotal();
-    }
+    hash = (37 * hash) + MSG_FIELD_NUMBER;
+    hash = (53 * hash) + getMsg().hashCode();
+    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getSessionId().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion();
+    hash = (37 * hash) + CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCode();
+    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + getTotal();
     if (getDataCount() > 0) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDataList().hashCode();
@@ -591,15 +521,15 @@ public  final class PAppResponse extends
     public Builder clear() {
       super.clear();
       msg_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       sessionId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       version_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       code_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       total_ = 0;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       data_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
       errors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -628,25 +558,10 @@ public  final class PAppResponse extends
       com.argo.web.protobuf.PAppResponse result = new com.argo.web.protobuf.PAppResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.msg_ = msg_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.sessionId_ = sessionId_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.version_ = version_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.code_ = code_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.total_ = total_;
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         data_ = java.util.Collections.unmodifiableList(data_);
@@ -700,23 +615,21 @@ public  final class PAppResponse extends
 
     public Builder mergeFrom(com.argo.web.protobuf.PAppResponse other) {
       if (other == com.argo.web.protobuf.PAppResponse.getDefaultInstance()) return this;
-      if (other.hasMsg()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getMsg().isEmpty()) {
         msg_ = other.msg_;
         onChanged();
       }
-      if (other.hasSessionId()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
         onChanged();
       }
-      if (other.hasVersion()) {
+      if (other.getVersion() != 0) {
         setVersion(other.getVersion());
       }
-      if (other.hasCode()) {
+      if (other.getCode() != 0) {
         setCode(other.getCode());
       }
-      if (other.hasTotal()) {
+      if (other.getTotal() != 0) {
         setTotal(other.getTotal());
       }
       if (!other.data_.isEmpty()) {
@@ -739,15 +652,11 @@ public  final class PAppResponse extends
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
     public final boolean isInitialized() {
-      if (!hasCode()) {
-        return false;
-      }
       return true;
     }
 
@@ -774,21 +683,13 @@ public  final class PAppResponse extends
     /**
      * <code>optional string msg = 1;</code>
      */
-    public boolean hasMsg() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional string msg = 1;</code>
-     */
     public java.lang.String getMsg() {
       java.lang.Object ref = msg_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          msg_ = s;
-        }
+        msg_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -818,7 +719,7 @@ public  final class PAppResponse extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       msg_ = value;
       onChanged();
       return this;
@@ -827,7 +728,7 @@ public  final class PAppResponse extends
      * <code>optional string msg = 1;</code>
      */
     public Builder clearMsg() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       msg_ = getDefaultInstance().getMsg();
       onChanged();
       return this;
@@ -840,7 +741,8 @@ public  final class PAppResponse extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       msg_ = value;
       onChanged();
       return this;
@@ -850,21 +752,13 @@ public  final class PAppResponse extends
     /**
      * <code>optional string sessionId = 2;</code>
      */
-    public boolean hasSessionId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string sessionId = 2;</code>
-     */
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sessionId_ = s;
-        }
+        sessionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -894,7 +788,7 @@ public  final class PAppResponse extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       sessionId_ = value;
       onChanged();
       return this;
@@ -903,7 +797,7 @@ public  final class PAppResponse extends
      * <code>optional string sessionId = 2;</code>
      */
     public Builder clearSessionId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       sessionId_ = getDefaultInstance().getSessionId();
       onChanged();
       return this;
@@ -916,19 +810,14 @@ public  final class PAppResponse extends
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       sessionId_ = value;
       onChanged();
       return this;
     }
 
     private int version_ ;
-    /**
-     * <code>optional int32 version = 3;</code>
-     */
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
     /**
      * <code>optional int32 version = 3;</code>
      */
@@ -939,7 +828,7 @@ public  final class PAppResponse extends
      * <code>optional int32 version = 3;</code>
      */
     public Builder setVersion(int value) {
-      bitField0_ |= 0x00000004;
+      
       version_ = value;
       onChanged();
       return this;
@@ -948,7 +837,7 @@ public  final class PAppResponse extends
      * <code>optional int32 version = 3;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       version_ = 0;
       onChanged();
       return this;
@@ -956,43 +845,31 @@ public  final class PAppResponse extends
 
     private int code_ ;
     /**
-     * <code>required int32 code = 4;</code>
-     */
-    public boolean hasCode() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>required int32 code = 4;</code>
+     * <code>optional int32 code = 4;</code>
      */
     public int getCode() {
       return code_;
     }
     /**
-     * <code>required int32 code = 4;</code>
+     * <code>optional int32 code = 4;</code>
      */
     public Builder setCode(int value) {
-      bitField0_ |= 0x00000008;
+      
       code_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>required int32 code = 4;</code>
+     * <code>optional int32 code = 4;</code>
      */
     public Builder clearCode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       code_ = 0;
       onChanged();
       return this;
     }
 
     private int total_ ;
-    /**
-     * <code>optional int32 total = 5;</code>
-     */
-    public boolean hasTotal() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
     /**
      * <code>optional int32 total = 5;</code>
      */
@@ -1003,7 +880,7 @@ public  final class PAppResponse extends
      * <code>optional int32 total = 5;</code>
      */
     public Builder setTotal(int value) {
-      bitField0_ |= 0x00000010;
+      
       total_ = value;
       onChanged();
       return this;
@@ -1012,7 +889,7 @@ public  final class PAppResponse extends
      * <code>optional int32 total = 5;</code>
      */
     public Builder clearTotal() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       total_ = 0;
       onChanged();
       return this;
@@ -1177,19 +1054,20 @@ public  final class PAppResponse extends
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureErrorsIsMutable();
+  checkByteStringIsUtf8(value);
+      ensureErrorsIsMutable();
       errors_.add(value);
       onChanged();
       return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1206,7 +1084,7 @@ public  final class PAppResponse extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<PAppResponse>
+  private static final com.google.protobuf.Parser<PAppResponse>
       PARSER = new com.google.protobuf.AbstractParser<PAppResponse>() {
     public PAppResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

@@ -1,25 +1,25 @@
-syntax = "proto2";
+syntax = "proto3";
 option java_package = "com.argo.sdk.protobuf";
 option java_multiple_files = true;
 option java_outer_classname = "PAppRequestProto";
 
 message PAppRequestParam {
-    required string name = 1;
-    optional int32 intValue = 2;
-    optional string strValue = 3;
-    optional int64 longValue = 4;
-    optional float floatValue = 5;
-    optional bool boolValue = 6;
-    optional bytes bytesValue = 7;
+    string name = 1;
+    int32 intValue = 2;
+    string strValue = 3;
+    int64 longValue = 4;
+    float floatValue = 5;
+    bool boolValue = 6;
+    bytes bytesValue = 7;
 }
 
 message PAppRequest {
-    required string authId = 1;
-    optional string sessionId = 2;
-    optional int32 version = 3;
-    optional string sign = 4;
-    optional string nonce = 5;
-    optional string userAgent = 6;
-    optional string path = 7;
-    repeated PAppRequestParam param = 8;
+    string authId = 1;
+    string sessionId = 2;
+    int32 version = 3;
+    string sign = 4;
+    string nonce = 5;
+    string userAgent = 6;
+    string path = 7;
+    PAppRequestParam param = 8;
 }

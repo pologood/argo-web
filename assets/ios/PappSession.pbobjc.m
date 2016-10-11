@@ -34,7 +34,7 @@ static GPBFileDescriptor *PappSessionRoot_FileDescriptor(void) {
   if (!descriptor) {
     GPBDebugCheckRuntimeVersion();
     descriptor = [[GPBFileDescriptor alloc] initWithPackage:@""
-                                                     syntax:GPBFileSyntaxProto2];
+                                                     syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
 }
@@ -43,30 +43,30 @@ static GPBFileDescriptor *PappSessionRoot_FileDescriptor(void) {
 
 @implementation PAppSession
 
-@dynamic hasSessionId, sessionId;
-@dynamic hasRealName, realName;
-@dynamic hasUserName, userName;
-@dynamic hasUserId, userId;
-@dynamic hasSecret, secret;
-@dynamic hasSigninDate, signinDate;
-@dynamic hasProfileImageURL, profileImageURL;
-@dynamic hasAppName, appName;
-@dynamic hasDeviceName, deviceName;
-@dynamic hasDeviceScreenSize, deviceScreenSize;
-@dynamic hasOsName, osName;
-@dynamic hasOsVersion, osVersion;
-@dynamic hasPackageVersion, packageVersion;
-@dynamic hasPackageName, packageName;
-@dynamic hasDeviceId, deviceId;
-@dynamic hasDeviceToken, deviceToken;
-@dynamic hasApnsEnabled, apnsEnabled;
-@dynamic hasLatesAppVers, latesAppVers;
-@dynamic hasLocaleIdentifier, localeIdentifier;
-@dynamic hasLatitude, latitude;
-@dynamic hasLongitude, longitude;
-@dynamic hasCityId, cityId;
-@dynamic hasUserKind, userKind;
-@dynamic hasUserDemo, userDemo;
+@dynamic sessionId;
+@dynamic realName;
+@dynamic userName;
+@dynamic userId;
+@dynamic secret;
+@dynamic signinDate;
+@dynamic profileImageURL;
+@dynamic appName;
+@dynamic deviceName;
+@dynamic deviceScreenSize;
+@dynamic osName;
+@dynamic osVersion;
+@dynamic packageVersion;
+@dynamic packageName;
+@dynamic deviceId;
+@dynamic deviceToken;
+@dynamic apnsEnabled;
+@dynamic latesAppVers;
+@dynamic localeIdentifier;
+@dynamic latitude;
+@dynamic longitude;
+@dynamic cityId;
+@dynamic userKind;
+@dynamic userDemo;
 
 typedef struct PAppSession__storage_ {
   uint32_t _has_storage_[1];

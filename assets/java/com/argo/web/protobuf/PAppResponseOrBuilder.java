@@ -10,10 +10,6 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>optional string msg = 1;</code>
    */
-  boolean hasMsg();
-  /**
-   * <code>optional string msg = 1;</code>
-   */
   java.lang.String getMsg();
   /**
    * <code>optional string msg = 1;</code>
@@ -21,10 +17,6 @@ public interface PAppResponseOrBuilder extends
   com.google.protobuf.ByteString
       getMsgBytes();
 
-  /**
-   * <code>optional string sessionId = 2;</code>
-   */
-  boolean hasSessionId();
   /**
    * <code>optional string sessionId = 2;</code>
    */
@@ -38,25 +30,13 @@ public interface PAppResponseOrBuilder extends
   /**
    * <code>optional int32 version = 3;</code>
    */
-  boolean hasVersion();
-  /**
-   * <code>optional int32 version = 3;</code>
-   */
   int getVersion();
 
   /**
-   * <code>required int32 code = 4;</code>
-   */
-  boolean hasCode();
-  /**
-   * <code>required int32 code = 4;</code>
+   * <code>optional int32 code = 4;</code>
    */
   int getCode();
 
-  /**
-   * <code>optional int32 total = 5;</code>
-   */
-  boolean hasTotal();
   /**
    * <code>optional int32 total = 5;</code>
    */

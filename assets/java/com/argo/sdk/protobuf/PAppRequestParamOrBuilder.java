@@ -8,15 +8,11 @@ public interface PAppRequestParamOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>required string name = 1;</code>
-   */
-  boolean hasName();
-  /**
-   * <code>required string name = 1;</code>
+   * <code>optional string name = 1;</code>
    */
   java.lang.String getName();
   /**
-   * <code>required string name = 1;</code>
+   * <code>optional string name = 1;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -24,16 +20,8 @@ public interface PAppRequestParamOrBuilder extends
   /**
    * <code>optional int32 intValue = 2;</code>
    */
-  boolean hasIntValue();
-  /**
-   * <code>optional int32 intValue = 2;</code>
-   */
   int getIntValue();
 
-  /**
-   * <code>optional string strValue = 3;</code>
-   */
-  boolean hasStrValue();
   /**
    * <code>optional string strValue = 3;</code>
    */
@@ -47,16 +35,8 @@ public interface PAppRequestParamOrBuilder extends
   /**
    * <code>optional int64 longValue = 4;</code>
    */
-  boolean hasLongValue();
-  /**
-   * <code>optional int64 longValue = 4;</code>
-   */
   long getLongValue();
 
-  /**
-   * <code>optional float floatValue = 5;</code>
-   */
-  boolean hasFloatValue();
   /**
    * <code>optional float floatValue = 5;</code>
    */
@@ -65,16 +45,8 @@ public interface PAppRequestParamOrBuilder extends
   /**
    * <code>optional bool boolValue = 6;</code>
    */
-  boolean hasBoolValue();
-  /**
-   * <code>optional bool boolValue = 6;</code>
-   */
   boolean getBoolValue();
 
-  /**
-   * <code>optional bytes bytesValue = 7;</code>
-   */
-  boolean hasBytesValue();
   /**
    * <code>optional bytes bytesValue = 7;</code>
    */

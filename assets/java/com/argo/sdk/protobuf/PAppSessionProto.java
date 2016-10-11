@@ -41,7 +41,7 @@ public final class PAppSessionProto {
       "leIdentifier\030\023 \001(\t\022\020\n\010latitude\030\024 \001(\002\022\021\n\t" +
       "longitude\030\025 \001(\002\022\016\n\006cityId\030\026 \001(\005\022\020\n\010userK" +
       "ind\030\027 \001(\005\022\020\n\010userDemo\030\030 \001(\005B+\n\025com.argo." +
-      "sdk.protobufB\020PAppSessionProtoP\001"
+      "sdk.protobufB\020PAppSessionProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
